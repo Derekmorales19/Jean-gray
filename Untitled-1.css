@@ -1,0 +1,516 @@
+/* =========================
+   CONFIGURACIÓN GENERAL
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #c51d22;
+    color: white;
+}
+
+
+/* =========================
+   BARRA DE NAVEGACIÓN
+========================= */
+
+.navbar {
+    height: 48px;
+    background: #bd292d;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 35px;
+
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25);
+
+    position: relative;
+    z-index: 10;
+}
+
+
+/* Logo */
+
+.logo {
+    font-size: 32px;
+    font-weight: 800;
+    color: white;
+    letter-spacing: -2px;
+}
+
+.logo span {
+    color: #ffd21c;
+}
+
+
+/* Menú */
+
+nav {
+    display: flex;
+    align-items: center;
+    gap: 75px;
+}
+
+nav a {
+    background: #ffd21c;
+    color: #a7191e;
+
+    text-decoration: none;
+
+    font-size: 9px;
+    font-weight: bold;
+
+    padding: 4px 13px;
+
+    border-radius: 20px;
+
+    transition: 0.3s;
+}
+
+nav a:hover {
+    background: white;
+    transform: translateY(-2px);
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+    min-height: calc(100vh - 48px);
+
+    background: #c51d22;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 60px 9% 50px;
+
+    overflow: hidden;
+}
+
+
+/* =========================
+   TEXTO
+========================= */
+
+.hero-content {
+    width: 52%;
+    padding-bottom: 30px;
+}
+
+.hero h1 {
+    font-size: clamp(55px, 6vw, 82px);
+
+    line-height: 1.06;
+
+    font-weight: 800;
+
+    letter-spacing: -3px;
+
+    margin-bottom: 35px;
+}
+
+.hero h1 span {
+    color: #ffd21c;
+}
+
+.hero p {
+    max-width: 540px;
+
+    font-size: 17px;
+
+    line-height: 1.4;
+
+    font-weight: 500;
+
+    color: white;
+
+    margin-bottom: 70px;
+}
+
+
+/* =========================
+   BOTONES
+========================= */
+
+.buttons {
+    display: flex;
+    gap: 190px;
+    align-items: center;
+}
+
+.btn {
+    display: inline-block;
+
+    min-width: 100px;
+
+    padding: 8px 20px;
+
+    text-align: center;
+
+    background: #ffd21c;
+
+    color: #a7191e;
+
+    text-decoration: none;
+
+    font-size: 11px;
+
+    font-weight: bold;
+
+    border-radius: 20px;
+
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background: white;
+
+    transform: translateY(-3px);
+
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+
+/* =========================
+   TELÉFONO
+========================= */
+
+.phone-container {
+    width: 38%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/* Cuerpo del teléfono */
+
+.phone {
+    width: 310px;
+    height: 615px;
+
+    background: #111;
+
+    border: 5px solid #050505;
+
+    border-radius: 55px;
+
+    padding: 15px;
+
+    position: relative;
+
+    box-shadow:
+        0 0 0 2px #444,
+        0 15px 30px rgba(0, 0, 0, 0.35);
+}
+
+
+/* Botones laterales */
+
+.phone::before {
+    content: "";
+
+    position: absolute;
+
+    left: -9px;
+    top: 145px;
+
+    width: 5px;
+    height: 38px;
+
+    background: #111;
+
+    border-radius: 5px;
+}
+
+.phone::after {
+    content: "";
+
+    position: absolute;
+
+    right: -9px;
+    top: 155px;
+
+    width: 5px;
+    height: 65px;
+
+    background: #111;
+
+    border-radius: 5px;
+}
+
+
+/* Altavoz */
+
+.speaker {
+    position: absolute;
+
+    top: 9px;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    width: 70px;
+    height: 6px;
+
+    background: #222;
+
+    border-radius: 10px;
+
+    z-index: 5;
+}
+
+
+/* Pantalla */
+
+.screen {
+    width: 100%;
+    height: 100%;
+
+    background: #fafafa;
+
+    border-radius: 40px;
+
+    overflow: hidden;
+
+    color: #111;
+}
+
+
+/* =========================
+   APP DEL TELÉFONO
+========================= */
+
+.app-header {
+    height: 55px;
+
+    background: #f5102d;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 15px 20px 5px;
+
+    color: white;
+}
+
+.app-logo {
+    font-size: 19px;
+    font-weight: bold;
+}
+
+.app-logo span {
+    color: #ffd21c;
+}
+
+.notification {
+    font-size: 20px;
+}
+
+
+/* Cabecera roja */
+
+.greeting {
+    background: #f5102d;
+
+    color: white;
+
+    padding: 5px 20px 25px;
+}
+
+.greeting p {
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+
+.greeting h2 {
+    font-size: 29px;
+    margin-bottom: 3px;
+}
+
+.greeting small {
+    font-size: 12px;
+}
+
+
+/* =========================
+   CLIENTES
+========================= */
+
+.customers {
+    background: #fff;
+}
+
+.customer {
+    height: 76px;
+
+    display: flex;
+    align-items: center;
+
+    padding: 10px 16px;
+
+    border-bottom: 1px solid #ddd;
+
+    gap: 10px;
+}
+
+
+/* Avatar */
+
+.avatar {
+    width: 37px;
+    height: 37px;
+
+    border-radius: 50%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 16px;
+
+    flex-shrink: 0;
+}
+
+.pink {
+    background: #ffd1d8;
+    color: #c51d22;
+}
+
+.green {
+    background: #d3ebe4;
+    color: #13705a;
+}
+
+
+/* Información */
+
+.customer-info {
+    flex: 1;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 2px;
+}
+
+.customer-info strong {
+    font-size: 15px;
+}
+
+.customer-info span {
+    font-size: 12px;
+    color: #222;
+}
+
+.customer > b {
+    color: #a7191e;
+    font-size: 15px;
+}
+
+.green-text {
+    color: #173c35 !important;
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 900px) {
+
+    .navbar {
+        padding: 0 20px;
+    }
+
+    nav {
+        gap: 15px;
+    }
+
+    nav a {
+        padding: 4px 8px;
+    }
+
+    .hero {
+        padding: 50px 6%;
+    }
+
+    .hero h1 {
+        font-size: 55px;
+    }
+
+    .buttons {
+        gap: 40px;
+    }
+
+    .phone {
+        width: 260px;
+        height: 520px;
+    }
+}
+
+
+@media (max-width: 700px) {
+
+    .navbar {
+        height: auto;
+
+        padding: 15px 20px;
+
+        flex-direction: column;
+
+        gap: 15px;
+    }
+
+    nav {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+    }
+
+    .hero {
+        flex-direction: column;
+
+        text-align: center;
+
+        padding: 60px 20px;
+    }
+
+    .hero-content {
+        width: 100%;
+    }
+
+    .hero h1 {
+        font-size: 48px;
+    }
+
+    .hero p {
+        margin: 0 auto 40px;
+    }
+
+    .buttons {
+        justify-content: center;
+
+        gap: 30px;
+
+        margin-bottom: 50px;
+    }
+
+    .phone-container {
+        width: 100%;
+    }
+}
+
