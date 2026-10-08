@@ -1,516 +1,572 @@
-/* =========================
+/* =========================================
    CONFIGURACIÓN GENERAL
-========================= */
+   ========================================= */
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
 }
 
 body {
-    font-family: Arial, Helvetica, sans-serif;
-    background: #c51d22;
-    color: white;
+    background-color: #b32624;
+    color: #ffffff;
+}
+
+/* CLASE PARA LOS TEXTOS AMARILLOS */
+
+.yellow-text {
+    color: #f4c430;
 }
 
 
-/* =========================
+/* =========================================
    BARRA DE NAVEGACIÓN
-========================= */
+   ========================================= */
 
 .navbar {
-    height: 48px;
-    background: #bd292d;
-
     display: flex;
-    align-items: center;
     justify-content: space-between;
-
-    padding: 0 35px;
-
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25);
-
-    position: relative;
-    z-index: 10;
+    align-items: center;
+    background-color: #c93b38;
+    padding: 15px 40px;
+    margin: 25px 40px;
+    border-radius: 40px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
 }
-
-
-/* Logo */
 
 .logo {
-    font-size: 32px;
-    font-weight: 800;
-    color: white;
-    letter-spacing: -2px;
+    font-size: 24px;
+    font-weight: 700;
+    letter-spacing: 1px;
 }
 
-.logo span {
-    color: #ffd21c;
-}
-
-
-/* Menú */
-
-nav {
+.nav-links {
     display: flex;
-    align-items: center;
-    gap: 75px;
-}
-
-nav a {
-    background: #ffd21c;
-    color: #a7191e;
-
-    text-decoration: none;
-
-    font-size: 9px;
-    font-weight: bold;
-
-    padding: 4px 13px;
-
-    border-radius: 20px;
-
-    transition: 0.3s;
-}
-
-nav a:hover {
-    background: white;
-    transform: translateY(-2px);
-}
-
-
-/* =========================
-   HERO
-========================= */
-
-.hero {
-    min-height: calc(100vh - 48px);
-
-    background: #c51d22;
-
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-
-    padding: 60px 9% 50px;
-
-    overflow: hidden;
-}
-
-
-/* =========================
-   TEXTO
-========================= */
-
-.hero-content {
-    width: 52%;
-    padding-bottom: 30px;
-}
-
-.hero h1 {
-    font-size: clamp(55px, 6vw, 82px);
-
-    line-height: 1.06;
-
-    font-weight: 800;
-
-    letter-spacing: -3px;
-
-    margin-bottom: 35px;
-}
-
-.hero h1 span {
-    color: #ffd21c;
-}
-
-.hero p {
-    max-width: 540px;
-
-    font-size: 17px;
-
-    line-height: 1.4;
-
-    font-weight: 500;
-
-    color: white;
-
-    margin-bottom: 70px;
-}
-
-
-/* =========================
-   BOTONES
-========================= */
-
-.buttons {
-    display: flex;
-    gap: 190px;
-    align-items: center;
-}
-
-.btn {
-    display: inline-block;
-
-    min-width: 100px;
-
-    padding: 8px 20px;
-
-    text-align: center;
-
-    background: #ffd21c;
-
-    color: #a7191e;
-
-    text-decoration: none;
-
-    font-size: 11px;
-
-    font-weight: bold;
-
-    border-radius: 20px;
-
-    transition: 0.3s;
-}
-
-.btn:hover {
-    background: white;
-
-    transform: translateY(-3px);
-
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-}
-
-
-/* =========================
-   TELÉFONO
-========================= */
-
-.phone-container {
-    width: 38%;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-
-/* Cuerpo del teléfono */
-
-.phone {
-    width: 310px;
-    height: 615px;
-
-    background: #111;
-
-    border: 5px solid #050505;
-
-    border-radius: 55px;
-
-    padding: 15px;
-
-    position: relative;
-
-    box-shadow:
-        0 0 0 2px #444,
-        0 15px 30px rgba(0, 0, 0, 0.35);
-}
-
-
-/* Botones laterales */
-
-.phone::before {
-    content: "";
-
-    position: absolute;
-
-    left: -9px;
-    top: 145px;
-
-    width: 5px;
-    height: 38px;
-
-    background: #111;
-
-    border-radius: 5px;
-}
-
-.phone::after {
-    content: "";
-
-    position: absolute;
-
-    right: -9px;
-    top: 155px;
-
-    width: 5px;
-    height: 65px;
-
-    background: #111;
-
-    border-radius: 5px;
-}
-
-
-/* Altavoz */
-
-.speaker {
-    position: absolute;
-
-    top: 9px;
-    left: 50%;
-
-    transform: translateX(-50%);
-
-    width: 70px;
-    height: 6px;
-
-    background: #222;
-
-    border-radius: 10px;
-
-    z-index: 5;
-}
-
-
-/* Pantalla */
-
-.screen {
-    width: 100%;
-    height: 100%;
-
-    background: #fafafa;
-
-    border-radius: 40px;
-
-    overflow: hidden;
-
-    color: #111;
-}
-
-
-/* =========================
-   APP DEL TELÉFONO
-========================= */
-
-.app-header {
-    height: 55px;
-
-    background: #f5102d;
-
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-
-    padding: 15px 20px 5px;
-
-    color: white;
-}
-
-.app-logo {
-    font-size: 19px;
-    font-weight: bold;
-}
-
-.app-logo span {
-    color: #ffd21c;
-}
-
-.notification {
-    font-size: 20px;
-}
-
-
-/* Cabecera roja */
-
-.greeting {
-    background: #f5102d;
-
-    color: white;
-
-    padding: 5px 20px 25px;
-}
-
-.greeting p {
-    font-size: 14px;
-    margin-bottom: 5px;
-}
-
-.greeting h2 {
-    font-size: 29px;
-    margin-bottom: 3px;
-}
-
-.greeting small {
-    font-size: 12px;
-}
-
-
-/* =========================
-   CLIENTES
-========================= */
-
-.customers {
-    background: #fff;
-}
-
-.customer {
-    height: 76px;
-
-    display: flex;
-    align-items: center;
-
-    padding: 10px 16px;
-
-    border-bottom: 1px solid #ddd;
-
     gap: 10px;
 }
 
+.nav-links a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 14px;
+    padding: 8px 20px;
+    border-radius: 20px;
+    transition: 0.3s;
+}
 
-/* Avatar */
+.nav-links a.active,
+.nav-links a:hover {
+    background-color: #f4c430;
+    color: #000000;
+}
 
-.avatar {
-    width: 37px;
-    height: 37px;
 
-    border-radius: 50%;
+/* =========================================
+   SECCIÓN PRINCIPAL / HERO
+   ========================================= */
 
+.hero-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 40px 80px;
+    max-width: 1300px;
+    margin: 0 auto;
+    gap: 40px;
+}
+
+.hero-text {
+    flex: 1;
+}
+
+.hero-text h1 {
+    font-size: 52px;
+    font-weight: 700;
+    line-height: 1.1;
+    margin-bottom: 20px;
+}
+
+.hero-text p {
+    font-size: 15px;
+    line-height: 1.6;
+    margin-bottom: 35px;
+    opacity: 0.95;
+    max-width: 500px;
+}
+
+
+/* Botones de Login y Sign up */
+
+.hero-buttons {
+    display: flex;
+    gap: 15px;
+}
+
+.btn-login,
+.btn-signup {
+    background-color: #f4c430;
+    color: #000000;
+    border: none;
+    padding: 12px 35px;
+    border-radius: 25px;
+    font-weight: 600;
+    font-size: 15px;
+    cursor: pointer;
+    transition: transform 0.2s, opacity 0.2s;
+}
+
+.btn-login:hover,
+.btn-signup:hover {
+    opacity: 0.9;
+    transform: scale(1.03);
+}
+
+
+/* Imagen del Teléfono */
+
+.hero-image {
+    flex: 1;
     display: flex;
     justify-content: center;
+}
+
+.hero-image img {
+    max-width: 350px;
+    height: auto;
+}
+
+
+/* =========================================
+   ESTILOS COMPLETOS PARA LA PÁGINA DE LOGIN
+   ========================================= */
+
+.login-body {
+    background-color: #f7f1e3 !important;
+    color: #333333;
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+
+/* Barra de navegación superior */
+
+.login-top-nav {
+    background-color: #910000 !important;
+    display: flex;
+    justify-content: space-between;
     align-items: center;
-
-    font-size: 16px;
-
-    flex-shrink: 0;
+    padding: 15px 50px;
 }
 
-.pink {
-    background: #ffd1d8;
-    color: #c51d22;
+.login-top-nav .logo {
+    color: #ffffff;
+    font-size: 24px;
+    font-weight: bold;
 }
 
-.green {
-    background: #d3ebe4;
-    color: #13705a;
+.login-top-nav .yellow-text {
+    color: #f4c430 !important;
+}
+
+.login-top-nav .nav-links a {
+    color: #ffffff;
+    text-decoration: none;
+    margin-left: 20px;
+    font-size: 14px;
+    padding: 6px 14px;
+    border-radius: 6px;
+    transition: 0.2s;
+}
+
+.login-top-nav .nav-links a:hover {
+    background-color: rgba(255, 255, 255, 0.15);
 }
 
 
-/* Información */
+/* =========================================
+   INFORMACIÓN DEL LOGIN
+   ========================================= */
 
-.customer-info {
+.login-info .brand-title {
+    color: #ef0000 !important;
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+.login-info .brand-title .yellow-text {
+    color: #ff0000 !important;
+}
+
+.login-main-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 40px 80px;
+    max-width: 1300px;
+    margin: 0 auto;
+    gap: 40px;
+}
+
+.login-info {
     flex: 1;
+    padding-top: 20px;
+}
 
+.login-info h1 {
+    font-size: 44px;
+    font-weight: 700;
+    line-height: 1.15;
+    color: #222222;
+    margin-bottom: 15px;
+}
+
+.login-info .dark-red-text {
+    color: #910000;
+}
+
+.login-info .subtitle {
+    font-size: 15px;
+    color: #555555;
+    margin-bottom: 20px;
+}
+
+
+/* Estilo para el botón de Volver al Home */
+
+.btn-back-home {
+    display: inline-block;
+    background-color: #fae19c;
+    color: #333333;
+    padding: 8px 16px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 600;
+    transition: 0.2s;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.btn-back-home:hover {
+    background-color: #f4c430;
+}
+
+
+/* Lista de características */
+
+.feature-list {
     display: flex;
     flex-direction: column;
-
-    gap: 2px;
+    gap: 25px;
 }
 
-.customer-info strong {
-    font-size: 15px;
+.feature-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
 }
 
-.customer-info span {
+.feature-icon {
+    font-size: 24px;
+    background: #fae19c;
+    padding: 10px;
+    border-radius: 12px;
+}
+
+.feature-item h3 {
+    font-size: 16px;
+    font-weight: 600;
+    color: #111111;
+    margin-bottom: 3px;
+}
+
+.feature-item p {
+    font-size: 13px;
+    color: #666666;
+    line-height: 1.4;
+}
+
+
+/* =========================================
+   CONTENEDOR DERECHO / LOGIN
+   ========================================= */
+
+.login-right-area {
+    flex: 1;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.login-card {
+    background-color: #ffffff;
+    padding: 40px;
+    border-radius: 20px;
+    width: 100%;
+    max-width: 420px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    z-index: 1;
+}
+
+.login-card h2 {
+    font-size: 28px;
+    font-weight: 700;
+    text-align: center;
+    color: #111;
+    margin-bottom: 5px;
+}
+
+.login-card .card-subtitle {
+    font-size: 13px;
+    color: #777;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+
+/* Campos del formulario */
+
+.login-card .input-group {
+    margin-bottom: 20px;
+}
+
+.login-card .input-group label {
+    display: block;
     font-size: 12px;
-    color: #222;
+    font-weight: 600;
+    color: #444;
+    margin-bottom: 6px;
 }
 
-.customer > b {
-    color: #a7191e;
+.login-card .input-group input {
+    width: 100%;
+    padding: 12px 15px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    font-size: 14px;
+    outline: none;
+    transition: 0.2s;
+    box-sizing: border-box;
+}
+
+.login-card .input-group input:focus {
+    border-color: #910000;
+}
+
+
+/* Contenedor y ojito vectorial limpio */
+
+.password-box-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.password-box-container input {
+    width: 100%;
+    padding-right: 45px !important;
+}
+
+.eye-icon {
+    position: absolute;
+    right: 12px;
+    cursor: pointer;
+    color: #777;
+    display: flex;
+    align-items: center;
+    user-select: none;
+    z-index: 10;
+    transition: color 0.2s;
+}
+
+.eye-icon:hover {
+    color: #910000;
+}
+
+
+/* Recuperación de contraseña */
+
+.login-card .forgot-password {
+    display: block;
+    text-align: right;
+    font-size: 11px;
+    color: #d9534f;
+    text-decoration: none;
+    margin-top: 5px;
+}
+
+.login-card .forgot-password:hover {
+    text-decoration: underline;
+}
+
+
+/* Botón principal */
+
+.login-card .btn-red-submit {
+    width: 100%;
+    background-color: #a8201a;
+    color: #ffffff;
+    border: none;
+    padding: 14px;
+    border-radius: 8px;
+    font-weight: 600;
     font-size: 15px;
+    cursor: pointer;
+    transition: 0.2s;
+    margin-top: 10px;
 }
 
-.green-text {
-    color: #173c35 !important;
-}
-
-
-/* =========================
-   RESPONSIVE
-========================= */
-
-@media (max-width: 900px) {
-
-    .navbar {
-        padding: 0 20px;
-    }
-
-    nav {
-        gap: 15px;
-    }
-
-    nav a {
-        padding: 4px 8px;
-    }
-
-    .hero {
-        padding: 50px 6%;
-    }
-
-    .hero h1 {
-        font-size: 55px;
-    }
-
-    .buttons {
-        gap: 40px;
-    }
-
-    .phone {
-        width: 260px;
-        height: 520px;
-    }
+.login-card .btn-red-submit:hover {
+    background-color: #8f1712;
 }
 
 
-@media (max-width: 700px) {
+/* =========================================
+   RECAPTCHA
+   ========================================= */
 
-    .navbar {
-        height: auto;
+.login-card .recaptcha-box {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #f9f9f9;
+    border: 1px solid #d3d3d3;
+    padding: 12px 15px;
+    border-radius: 6px;
+    margin-top: 20px;
+    font-size: 13px;
+    cursor: pointer;
+    transition: 0.3s;
+}
 
-        padding: 15px 20px;
+.recaptcha-left {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
 
-        flex-direction: column;
+.login-card .recaptcha-box input {
+    width: 18px;
+    height: 18px;
+    cursor: pointer;
+}
 
-        gap: 15px;
+.spinner {
+    display: none;
+    width: 20px;
+    height: 20px;
+    border: 3px solid #f3f3f3;
+    border-top: 3px solid #3498db;
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
     }
 
-    nav {
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 10px;
-    }
-
-    .hero {
-        flex-direction: column;
-
-        text-align: center;
-
-        padding: 60px 20px;
-    }
-
-    .hero-content {
-        width: 100%;
-    }
-
-    .hero h1 {
-        font-size: 48px;
-    }
-
-    .hero p {
-        margin: 0 auto 40px;
-    }
-
-    .buttons {
-        justify-content: center;
-
-        gap: 30px;
-
-        margin-bottom: 50px;
-    }
-
-    .phone-container {
-        width: 100%;
+    100% {
+        transform: rotate(360deg);
     }
 }
 
+.login-card .recaptcha-logo {
+    font-size: 10px;
+    color: #555;
+    text-align: center;
+}
+
+
+/* =========================================
+   REDIRECCIÓN A SIGN UP
+   ========================================= */
+
+.login-card .signup-redirect {
+    text-align: center;
+    font-size: 12px;
+    color: #666;
+    margin-top: 25px;
+}
+
+.login-card .signup-redirect a {
+    color: #a8201a;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.login-card .signup-redirect a:hover {
+    text-decoration: underline;
+}
+
+
+/* =========================================
+   VENTANA FLOTANTE DE RECUPERACIÓN
+   Posicionada a la izquierda de la tarjeta
+   ========================================= */
+
+.recovery-section-hidden {
+    display: none;
+    position: absolute;
+    right: 440px;
+    top: 0;
+    width: 340px;
+    z-index: 10;
+}
+
+.recovery-card {
+    background-color: #ffffff;
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    text-align: left;
+    border: 2px solid #910000;
+    position: relative;
+}
+
+.close-recovery {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    background: none;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    color: #888;
+}
+
+.close-recovery:hover {
+    color: #000;
+}
+
+.recovery-card h3 {
+    color: #910000;
+    font-size: 18px;
+    margin-bottom: 8px;
+}
+
+.recovery-card p {
+    font-size: 12px;
+    color: #666;
+    margin-bottom: 15px;
+    line-height: 1.4;
+}
+
+.recovery-inputs {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.recovery-inputs input {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    outline: none;
+    box-sizing: border-box;
+}
