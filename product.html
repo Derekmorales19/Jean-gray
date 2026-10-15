@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FIA'O - Inventario</title>
+    <link rel="stylesheet" href="asset/css/product.css">
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+      <!-- BARRA DE NAVEGACIÓN -->
+    <header class="navbar">
+        <div class="logo">FIA<span class="yellow-text">´O</span></div>
+        <nav class="nav-links">
+            <a href="#inicio" class="active">Home</a>
+            <a href="credit.html">Credit</a>
+            <a href="#products">Products</a>
+            <a href="#clients">Clients</a>
+            <a href="#reports">Reports</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+</body>
+
+    <!-- Barra superior -->
+    <header class="topbar">
+        <a href="#" class="logo">FIA'O</a>
+
+        <div class="search-box">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <input type="search"
+                   placeholder="Search products, pantry, drinks...">
+        </div>
+
+        <div class="top-actions">
+            <button class="language">
+                <i class="fa-solid fa-globe"></i> ES
+            </button>
+            <button class="theme-button" aria-label="Cambiar tema">
+                <i class="fa-solid fa-moon"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Contenido principal -->
+    <main class="container">
+
+        <!-- Navegación -->
+        <nav class="tabs">
+            <button class="tab active">Inventory</button>
+            <button class="tab">Register Fiado Sale</button>
+        </nav>
+
+        <!-- Título -->
+        <section class="inventory-header">
+            <h1>Your inventory, always exact</h1>
+            <p>
+                Showing core products and add option.
+                Use search bar to look up items.
+            </p>
+        </section>
+
+        <!-- Productos -->
+        <section class="product-grid" id="productGrid">
+
+            <!-- Azúcar -->
+            <article class="product-card" data-name="sugar">
+                <div class="product-info">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1581441363689-1f3c3c414635?auto=format&fit=crop&w=150&q=80"
+                             alt="Azúcar">
+                    </div>
+                    <div class="product-details">
+                        <span class="category">Pantry</span>
+                        <h3>Sugar</h3>
+                        <strong class="price">B/. 0.85</strong>
+                    </div>
+                </div>
+                <div class="stock">
+                    <span>Stock:</span>
+                    <strong>25 lb</strong>
+                </div>
+                <div class="card-actions">
+                    <button class="action-button" onclick="editProduct('Sugar')">
+                        <i class="fa-solid fa-pen"></i> Edit
+                    </button>
+                    <button class="action-button" onclick="deleteProduct(this)">
+                        <i class="fa-solid fa-trash"></i> Delete
+                    </button>
+                </div>
+            </article>
+
+            <!-- Arroz -->
+            <article class="product-card" data-name="rice">
+                <div class="product-info">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1586201375761-83865001e31c?auto=format&fit=crop&w=150&q=80"
+                             alt="Arroz">
+                    </div>
+                    <div class="product-details">
+                        <span class="category">Pantry</span>
+                        <h3>Rice</h3>
+                        <strong class="price">B/. 0.95</strong>
+                    </div>
+                </div>
+                <div class="stock">
+                    <span>Stock:</span>
+                    <strong>38 lb</strong>
+                </div>
+                <div class="card-actions">
+                    <button class="action-button" onclick="editProduct('Rice')">
+                        <i class="fa-solid fa-pen"></i> Edit
+                    </button>
+                    <button class="action-button" onclick="deleteProduct(this)">
+                        <i class="fa-solid fa-trash"></i> Delete
+                    </button>
+                </div>
+            </article>
+
+            <!-- Pan blanco -->
+            <article class="product-card" data-name="white bread">
+                <div class="product-info">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=150&q=80"
+                             alt="Pan blanco">
+                    </div>
+                    <div class="product-details">
+                        <span class="category">Bakery</span>
+                        <h3>White Bread</h3>
+                        <strong class="price">B/. 1.50</strong>
+                    </div>
+                </div>
+                <div class="stock">
+                    <span>Stock:</span>
+                    <strong>12 Unit</strong>
+                </div>
+                <div class="card-actions">
+                    <button class="action-button" onclick="editProduct('White Bread')">
+                        <i class="fa-solid fa-pen"></i> Edit
+                    </button>
+                    <button class="action-button" onclick="deleteProduct(this)">
+                        <i class="fa-solid fa-trash"></i> Delete
+                    </button>
+                </div>
+            </article>
+
+            <!-- Coca-Cola -->
+            <article class="product-card" data-name="coca cola">
+                <div class="product-info">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1554866585-cd94860890b7?auto=format&fit=crop&w=150&q=80"
+                             alt="Coca-Cola">
+                    </div>
+                    <div class="product-details">
+                        <span class="category">Beverages</span>
+                        <h3>Coca Cola 2L</h3>
+                        <strong class="price">B/. 2.10</strong>
+                    </div>
+                </div>
+                <div class="stock">
+                    <span>Stock:</span>
+                    <strong>20 Bottle</strong>
+                </div>
+                <div class="card-actions">
+                    <button class="action-button" onclick="editProduct('Coca Cola 2L')">
+                        <i class="fa-solid fa-pen"></i> Edit
+                    </button>
+                    <button class="action-button" onclick="deleteProduct(this)">
+                        <i class="fa-solid fa-trash"></i> Delete
+                    </button>
+                </div>
+            </article>
+
+            <!-- Huevos -->
+            <article class="product-card" data-name="eggs">
+                <div class="product-info">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1506976785307-8732e854ad03?auto=format&fit=crop&w=150&q=80"
+                             alt="Huevos">
+                    </div>
+                    <div class="product-details">
+                        <span class="category">Dairy</span>
+                        <h3>Eggs (Dozen)</h3>
+                        <strong class="price">B/. 3.20</strong>
+                    </div>
+                </div>
+                <div class="stock">
+                    <span>Stock:</span>
+                    <strong>15 Pack</strong>
+                </div>
+                <div class="card-actions">
+                    <button class="action-button" onclick="editProduct('Eggs (Dozen)')">
+                        <i class="fa-solid fa-pen"></i> Edit
+                    </button>
+                    <button class="action-button" onclick="deleteProduct(this)">
+                        <i class="fa-solid fa-trash"></i> Delete
+                    </button>
+                </div>
+            </article>
+
+            <!-- Agregar producto -->
+            <button class="add-product" onclick="addProduct()">
+                <i class="fa-solid fa-plus"></i>
+                <strong>Add New Product</strong>
+                <span>Create a new item</span>
+            </button>
+
+        </section>
+    </main>
+
+    <script>
+        // Buscar productos
+        const searchInput = document.querySelector(
+            '.search-box input'
+        );
+
+        searchInput.addEventListener('input', function () {
+            const search = this.value.toLowerCase();
+
+            document.querySelectorAll('.product-card').forEach(card => {
+                const name = card.dataset.name.toLowerCase();
+                card.style.display = name.includes(search) ? '' : 'none';
+            });
+        });
+
+        // Eliminar producto
+        function deleteProduct(button) {
+            const confirmDelete = confirm(
+                '¿Deseas eliminar este producto?'
+            );
+
+            if (confirmDelete) {
+                button.closest('.product-card').remove();
+            }
+        }
+
+        // Editar producto
+        function editProduct(name) {
+            alert('Editar producto: ' + name);
+        }
+
+        // Agregar producto
+        function addProduct() {
+            const name = prompt('Nombre del nuevo producto:');
+
+            if (name && name.trim()) {
+                const grid = document.getElementById('productGrid');
+                const card = document.createElement('article');
+
+                card.className = 'product-card';
+                card.dataset.name = name.trim().toLowerCase();
+
+                card.innerHTML = `
+                    <div class="product-info">
+                        <div class="product-image new-image">
+                            <i class="fa-solid fa-box"></i>
+                        </div>
+                        <div class="product-details">
+                            <span class="category">General</span>
+                            <h3></h3>
+                            <strong class="price">B/. 0.00</strong>
+                        </div>
+                    </div>
+                    <div class="stock">
+                        <span>Stock:</span>
+                        <strong>0 Unit</strong>
+                    </div>
+                    <div class="card-actions">
+                        <button class="action-button"
+                            onclick="editProduct(this.closest('.product-card').querySelector('h3').textContent)">
+                            <i class="fa-solid fa-pen"></i> Edit
+                        </button>
+                        <button class="action-button"
+                            onclick="deleteProduct(this)">
+                            <i class="fa-solid fa-trash"></i> Delete
+                        </button>
+                    </div>
+                `;
+
+                card.querySelector('h3').textContent = name.trim();
+
+                const addButton = grid.querySelector('.add-product');
+                grid.insertBefore(card, addButton);
+            }
+        }
+
+        // Cambiar entre tema claro y oscuro
+        document.querySelector('.theme-button').addEventListener('click', () => {
+            document.body.classList.toggle('dark-mode');
+        });
+    </script>
+
+</body>
+</html>
