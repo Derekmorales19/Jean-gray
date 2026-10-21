@@ -1,0 +1,257 @@
+
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+		<title>FIA'O - Client Management</title>
+
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+		<link rel="stylesheet" href="./asset/css/clients.css">
+	</head>
+
+	<body>
+
+		<!-- NAVIGATION BAR -->
+		<header class="site-header">
+			<nav class="navbar">
+
+				<a href="index.html" class="navbar-brand">
+					<img src="./asset/img/logof.png" alt="FIA'O Logo" class="navbar-logo">
+				</a>
+
+				<ul class="navbar-menu">
+					<li><a href="index.html" class="nav-link">Home</a></li>
+					<li><a href="credit.html" class="nav-link">Credit</a></li>
+					<li><a href="product.html" class="nav-link">Products</a></li>
+					<li><a href="clients.html" class="nav-link active">Clients</a></li>
+					<li><a href="reports.html" class="nav-link">Reports</a></li>
+					<li><a href="contact.html" class="nav-link">Contact</a></li>
+				</ul>
+
+				<div class="navbar-actions">
+					<button class="nav-icon" id="notifications-btn" type="button" aria-label="Notifications">
+						<i class="fa-regular fa-bell"></i>
+						<span class="notification-badge">2</span>
+					</button>
+
+					<button class="nav-icon" id="theme-toggle" type="button" aria-label="Toggle dark mode">
+						<i class="fa-regular fa-moon"></i>
+					</button>
+				</div>
+
+			</nav>
+		</header>
+
+		<!-- MAIN CONTENT -->
+		<main class="clients-main-container">
+
+			<div class="clients-layout-grid">
+
+				<!-- LEFT COLUMN -->
+				<section class="left-hero-column">
+
+					<div class="title-with-actions">
+						<h1 class="page-title">Client Management</h1>
+
+						<div class="top-action-icons">
+							<button class="icon-circle-btn" id="language-btn" type="button" aria-label="Language">
+								<i class="fa-solid fa-globe"></i>
+							</button>
+
+							<button class="icon-circle-btn" id="sub-theme-toggle" type="button" aria-label="Toggle theme">
+								<i class="fa-regular fa-moon"></i>
+							</button>
+						</div>
+					</div>
+
+					<h2 class="page-subtitle">Each client, with a clear account</h2>
+
+					<p class="page-description">
+						Register your customers in seconds and see at a glance who is up to date,
+						who owes, and who to remind.
+					</p>
+
+					<div class="hero-image-wrapper">
+						<img
+							src="./asset/img/hombre.png"
+							alt="Shopkeeper assisting a customer"
+							class="hero-senor-img"
+						>
+					</div>
+
+				</section>
+
+				<!-- RIGHT COLUMN -->
+				<section class="right-content-column" aria-label="Client accounts">
+
+					<!-- SEARCH AND FILTERS -->
+					<div class="search-filter-card">
+
+						<label class="search-input-box" for="client-search">
+							<i class="fa-solid fa-magnifying-glass search-icon"></i>
+							<input
+								type="search"
+								id="client-search"
+								placeholder="Search client by name or phone..."
+								autocomplete="off"
+							>
+						</label>
+
+						<div class="filter-pills-row" aria-label="Filter clients">
+							<button class="filter-pill active" type="button" data-filter="all">All</button>
+							<button class="filter-pill" type="button" data-filter="ontime">On Time</button>
+							<button class="filter-pill" type="button" data-filter="pending">Pending</button>
+							<button class="filter-pill" type="button" data-filter="overdue">Overdue</button>
+						</div>
+
+					</div>
+
+					<!-- CLIENT TABLE -->
+					<div class="clients-table-card">
+
+						<table class="clients-table">
+							<thead>
+								<tr>
+									<th>Client</th>
+									<th>Purchases</th>
+									<th>Pending debt</th>
+									<th>Status</th>
+									<th>Actions</th>
+								</tr>
+							</thead>
+
+							<tbody id="clients-table-body">
+
+								<tr data-status="pending" data-name="ramón batista" data-phone="6123-4567" data-debt="35.00" data-purchases="14">
+									<td>
+										<div class="client-profile-cell">
+											<span class="avatar-circle">RB</span>
+											<div class="client-name-box">
+												<h4>Ramón Batista</h4>
+												<p>6123-4567</p>
+											</div>
+										</div>
+									</td>
+									<td class="purchases-text">14 purchases</td>
+									<td class="debt-amount">B/. 35.00</td>
+									<td><span class="status-badge pending">Pending</span></td>
+									<td><button class="action-link detail-button" type="button">View detail →</button></td>
+								</tr>
+
+								<tr data-status="ontime" data-name="yolanda pérez" data-phone="6234-8890" data-debt="0.00" data-purchases="22">
+									<td>
+										<div class="client-profile-cell">
+											<span class="avatar-circle">YP</span>
+											<div class="client-name-box">
+												<h4>Yolanda Pérez</h4>
+												<p>6234-8890</p>
+											</div>
+										</div>
+									</td>
+									<td class="purchases-text">22 purchases</td>
+									<td class="debt-amount">—</td>
+									<td><span class="status-badge ontime">On Time</span></td>
+									<td><button class="action-link detail-button" type="button">View detail →</button></td>
+								</tr>
+
+								<tr data-status="overdue" data-name="carlos ruiz" data-phone="6301-2245" data-debt="62.50" data-purchases="9">
+									<td>
+										<div class="client-profile-cell">
+											<span class="avatar-circle">CR</span>
+											<div class="client-name-box">
+												<h4>Carlos Ruiz</h4>
+												<p>6301-2245</p>
+											</div>
+										</div>
+									</td>
+									<td class="purchases-text">9 purchases</td>
+									<td class="debt-amount">B/. 62.50</td>
+									<td><span class="status-badge overdue">Overdue</span></td>
+									<td><button class="action-link detail-button" type="button">View detail →</button></td>
+								</tr>
+
+								<tr data-status="pending" data-name="mireya santos" data-phone="6415-7783" data-debt="12.00" data-purchases="31">
+									<td>
+										<div class="client-profile-cell">
+											<span class="avatar-circle">MS</span>
+											<div class="client-name-box">
+												<h4>Mireya Santos</h4>
+												<p>6415-7783</p>
+											</div>
+										</div>
+									</td>
+									<td class="purchases-text">31 purchases</td>
+									<td class="debt-amount">B/. 12.00</td>
+									<td><span class="status-badge pending">Pending</span></td>
+									<td><button class="action-link detail-button" type="button">View detail →</button></td>
+								</tr>
+
+							</tbody>
+						</table>
+
+						<p id="empty-state" class="empty-state" hidden>No clients match your search.</p>
+
+					</div>
+
+					<!-- WHATSAPP REMINDER -->
+					<div class="whatsapp-reminder-card">
+
+						<div class="reminder-text-info">
+							<div class="reminder-header">
+								<i class="fa-brands fa-whatsapp whatsapp-icon"></i>
+								<h3>Automatic Reminder</h3>
+							</div>
+
+							<p id="whatsapp-message-preview">
+								WhatsApp to <strong>Ramón Batista</strong>:
+								"Hello Ramón, you have B/. 35.00 pending in Minisúper Doña Chela. See you soon!"
+							</p>
+						</div>
+
+						<button class="btn-send-whatsapp" id="send-whatsapp-btn" type="button">
+							Send
+						</button>
+
+					</div>
+
+					<p class="feedback" id="feedback" role="status" aria-live="polite"></p>
+
+				</section>
+
+			</div>
+
+		</main>
+
+		<!-- CLIENT DETAILS DIALOG -->
+		<dialog id="detail-dialog" class="detail-dialog">
+			<button class="close-dialog" id="close-dialog" type="button" aria-label="Close">×</button>
+
+			<p class="dialog-eyebrow">CLIENT ACCOUNT</p>
+			<h2 id="detail-name">Client name</h2>
+			<p id="detail-phone" class="dialog-muted"></p>
+
+			<div class="detail-grid">
+				<div>
+					<span>Purchases</span>
+					<strong id="detail-purchases"></strong>
+				</div>
+				<div>
+					<span>Pending debt</span>
+					<strong id="detail-debt"></strong>
+				</div>
+				<div>
+					<span>Status</span>
+					<strong id="detail-status"></strong>
+				</div>
+			</div>
+		</dialog>
+
+		<script src="./asset/js/clients.js"></script>
+	</body>
+</html>

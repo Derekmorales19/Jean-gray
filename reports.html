@@ -1,0 +1,313 @@
+
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+		<title>FIA'O Reports</title>
+
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+		<link rel="stylesheet" href="./asset/css/reports.css">
+	</head>
+
+	<body>
+
+		<!-- BARRA DE NAVEGACIÓN -->
+		<header class="navbar">
+			<div class="logo">
+				FIA<span class="yellow-text">´O</span>
+			</div>
+
+			<nav class="nav-links">
+				<a href="index.html">Home</a>
+				<a href="credit.html">Credit</a>
+				<a href="product.html">Products</a>
+				<a href="clients.html">Clients</a>
+				<a href="reports.html" class="active">Reports</a>
+				<a href="#contact">Contact</a>
+			</nav>
+		</header>
+
+		<!-- ENCABEZADO DE REPORTES -->
+		<header class="reports-header">
+			<div class="brand-area">
+				<div class="brand-icon">
+					<i class="fa-solid fa-chart-pie"></i>
+				</div>
+
+				<div>
+					<h1>FIA'O Reports</h1>
+					<p>Financial tracking, credit summaries, and business analytics overview.</p>
+				</div>
+
+				<button class="icon-btn" id="theme-toggle" type="button" aria-label="Change theme">
+					<i class="fa-regular fa-moon"></i>
+				</button>
+			</div>
+
+			<div class="export-actions">
+				<button class="export-btn" id="export-pdf" type="button">
+					<i class="fa-solid fa-file-pdf"></i>
+					Export PDF
+				</button>
+
+				<button class="export-btn" id="export-excel" type="button">
+					<i class="fa-solid fa-file-excel"></i>
+					Export Excel
+				</button>
+			</div>
+		</header>
+
+		<main class="reports-container">
+
+			<!-- FILTROS -->
+			<section class="filter-card">
+
+				<div class="filter-group">
+					<label for="start-date">DATE RANGE</label>
+
+					<div class="date-range">
+						<div class="date-input">
+							<i class="fa-regular fa-calendar"></i>
+							<input type="date" id="start-date" value="2026-07-01">
+						</div>
+
+						<span>to</span>
+
+						<div class="date-input">
+							<input type="date" id="end-date" value="2026-07-31">
+						</div>
+					</div>
+				</div>
+
+				<div class="filter-group">
+					<label for="customer-filter">CUSTOMER STATUS / NAME</label>
+
+					<div class="select-wrapper">
+						<i class="fa-solid fa-users"></i>
+
+						<select id="customer-filter">
+							<option value="all">All Customers (All Names)</option>
+							<option value="ontime">On Time</option>
+							<option value="pending">Pending</option>
+							<option value="overdue">Overdue</option>
+							<option value="Maria Gomez">Maria Gomez</option>
+							<option value="Carlos Mendoza">Carlos Mendoza</option>
+							<option value="Ana Ruiz">Ana Ruiz</option>
+						</select>
+					</div>
+				</div>
+
+				<button class="apply-btn" id="apply-filters" type="button">
+					<i class="fa-solid fa-filter"></i>
+					Apply Filters
+				</button>
+
+				<p class="filter-message" id="filter-message" role="status"></p>
+			</section>
+
+			<!-- TARJETAS DE RESUMEN -->
+			<section class="summary-grid">
+
+				<article class="summary-card">
+					<div class="summary-heading">
+						<span>TOTAL ACTIVE CREDIT</span>
+						<span class="summary-icon gold">
+							<i class="fa-solid fa-wallet"></i>
+						</span>
+					</div>
+					<h2 id="active-credit">$1,450.00</h2>
+					<p class="positive">↑ 8.4% from last month</p>
+				</article>
+
+				<article class="summary-card">
+					<div class="summary-heading">
+						<span>COLLECTED THIS MONTH</span>
+						<span class="summary-icon green">
+							<i class="fa-solid fa-circle-check"></i>
+						</span>
+					</div>
+					<h2 id="collected-total">$3,120.50</h2>
+					<p class="positive">↑ 12.1% efficiency</p>
+				</article>
+
+				<article class="summary-card">
+					<div class="summary-heading">
+						<span>PENDING BALANCES</span>
+						<span class="summary-icon red">
+							<i class="fa-solid fa-triangle-exclamation"></i>
+						</span>
+					</div>
+					<h2 id="pending-total">$340.00</h2>
+					<p class="negative">↓ 3 accounts overdue</p>
+				</article>
+
+				<article class="summary-card">
+					<div class="summary-heading">
+						<span>TOTAL CUSTOMERS</span>
+						<span class="summary-icon blue">
+							<i class="fa-solid fa-users"></i>
+						</span>
+					</div>
+					<h2 id="customer-total">48</h2>
+					<p class="positive">+5 new this month</p>
+				</article>
+
+			</section>
+
+			<!-- GRÁFICOS -->
+			<section class="charts-grid">
+
+				<article class="chart-card activity-card">
+					<h3>Credit Activity &amp; Payments Flow</h3>
+
+					<div class="chart-legend">
+						<span><i class="legend-dot issued"></i> Credit Issued</span>
+						<span><i class="legend-dot received"></i> Payments Received</span>
+						<span><i class="legend-dot overdue-dot"></i> Overdue</span>
+					</div>
+
+					<div class="bar-chart">
+						<div class="chart-week">
+							<div class="bars">
+								<span class="bar issued-bar" style="height: 30px"></span>
+								<span class="bar received-bar" style="height: 45px"></span>
+								<span class="bar overdue-bar" style="height: 10px"></span>
+							</div>
+							<span class="week-label">Week 1</span>
+						</div>
+
+						<div class="chart-week">
+							<div class="bars">
+								<span class="bar issued-bar" style="height: 40px"></span>
+								<span class="bar received-bar" style="height: 55px"></span>
+								<span class="bar overdue-bar" style="height: 18px"></span>
+							</div>
+							<span class="week-label">Week 2</span>
+						</div>
+
+						<div class="chart-week">
+							<div class="bars">
+								<span class="bar issued-bar" style="height: 25px"></span>
+								<span class="bar received-bar" style="height: 35px"></span>
+								<span class="bar overdue-bar" style="height: 7px"></span>
+							</div>
+							<span class="week-label">Week 3</span>
+						</div>
+
+						<div class="chart-week">
+							<div class="bars">
+								<span class="bar issued-bar" style="height: 50px"></span>
+								<span class="bar received-bar" style="height: 65px"></span>
+								<span class="bar overdue-bar" style="height: 20px"></span>
+							</div>
+							<span class="week-label">Week 4</span>
+						</div>
+					</div>
+				</article>
+
+				<article class="chart-card status-card">
+					<h3>Payment Status Breakdown</h3>
+
+					<div class="status-row">
+						<div class="status-label">
+							<span>On Time (75%)</span>
+							<strong>$2,340</strong>
+						</div>
+						<div class="progress-track">
+							<span class="progress-fill ontime-fill" style="width: 75%"></span>
+						</div>
+					</div>
+
+					<div class="status-row">
+						<div class="status-label">
+							<span>Pending (17%)</span>
+							<strong>$540</strong>
+						</div>
+						<div class="progress-track">
+							<span class="progress-fill pending-fill" style="width: 17%"></span>
+						</div>
+					</div>
+
+					<div class="status-row">
+						<div class="status-label">
+							<span>Overdue (8%)</span>
+							<strong>$240</strong>
+						</div>
+						<div class="progress-track">
+							<span class="progress-fill overdue-fill" style="width: 8%"></span>
+						</div>
+					</div>
+				</article>
+
+			</section>
+
+			<!-- TABLA DE TRANSACCIONES -->
+			<section class="transactions-card">
+				<div class="table-heading">
+					<h3>Recent Credit Transactions</h3>
+				</div>
+
+				<div class="table-scroll">
+					<table class="transactions-table">
+						<thead>
+							<tr>
+								<th>Customer Name</th>
+								<th>Description</th>
+								<th>Amount</th>
+								<th>Date</th>
+								<th>Status</th>
+							</tr>
+						</thead>
+
+						<tbody id="transactions-body">
+							<tr data-customer="Maria Gomez" data-status="ontime" data-date="2026-07-28">
+								<td>Maria Gomez</td>
+								<td>Grocery items &amp; supplies</td>
+								<td>$45.00</td>
+								<td>2026-07-28</td>
+								<td><span class="table-status ontime">On Time</span></td>
+							</tr>
+
+							<tr data-customer="Carlos Mendoza" data-status="pending" data-date="2026-07-25">
+								<td>Carlos Mendoza</td>
+								<td>Weekly hardware credit</td>
+								<td>$120.00</td>
+								<td>2026-07-25</td>
+								<td><span class="table-status pending">Pending</span></td>
+							</tr>
+
+							<tr data-customer="Ana Ruiz" data-status="overdue" data-date="2026-07-18">
+								<td>Ana Ruiz</td>
+								<td>Bakery stock order</td>
+								<td>$85.50</td>
+								<td>2026-07-18</td>
+								<td><span class="table-status overdue">Overdue</span></td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+
+				<p id="no-transactions" class="empty-message" hidden>
+					No transactions match the selected filters.
+				</p>
+
+				<div class="pagination" id="pagination">
+					<button class="page-btn active" type="button" data-page="1">1</button>
+					<button class="page-btn" type="button" data-page="2">2</button>
+					<button class="page-btn" type="button" data-page="3">3</button>
+				</div>
+			</section>
+
+			<p class="page-message" id="page-message" role="status"></p>
+
+		</main>
+
+		<script src="./asset/js/reports.js"></script>
+	</body>
+</html>

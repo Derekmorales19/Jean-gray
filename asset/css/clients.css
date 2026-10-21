@@ -1,0 +1,841 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap');
+
+/* ========================================
+   VARIABLES GENERALES
+======================================== */
+
+:root {
+	--cream: #fff8dc;
+	--white: #ffffff;
+	--brown: #5b3d30;
+	--text: #201b1a;
+	--muted: #85756e;
+	--gold: #f4d66d;
+	--line: #f0d66e;
+	--green-bg: #d7f0df;
+	--green-text: #11652f;
+	--yellow-bg: #fff0c7;
+	--yellow-text: #916700;
+	--red-bg: #f9d8dc;
+	--red-text: #8e1e2a;
+}
+
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	min-height: 100vh;
+	background: var(--white);
+	color: var(--text);
+	font-family: 'Poppins', sans-serif;
+	transition: background 0.25s ease, color 0.25s ease;
+}
+
+button,
+input {
+	font: inherit;
+}
+
+button {
+	cursor: pointer;
+}
+
+[hidden] {
+	display: none !important;
+}
+
+/* ========================================
+   NAVEGACIÓN
+======================================== */
+
+.site-header {
+	width: 100%;
+	padding: 20px 0 12px;
+	background: var(--white);
+}
+
+.navbar {
+	width: 92%;
+	max-width: 1600px;
+	min-height: 72px;
+	margin: 0 auto;
+	padding: 12px 28px;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 20px;
+	background: #b91c1c;
+	border-radius: 40px;
+	box-shadow: 0 5px 14px rgba(72, 45, 31, 0.12);
+}
+
+.navbar-brand {
+	display: flex;
+	align-items: center;
+	flex-shrink: 0;
+}
+
+.navbar-logo {
+	display: block;
+	width: auto;
+	max-width: 150px;
+	height: 45px;
+	object-fit: contain;
+}
+
+.navbar-menu {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-wrap: wrap;
+	gap: 5px;
+	list-style: none;
+}
+
+.navbar-menu a {
+	display: inline-block;
+	padding: 10px 14px;
+	border-radius: 25px;
+	color: #ffffff;
+	font-size: 14px;
+	font-weight: 700;
+	text-decoration: none;
+	transition: background 0.2s ease, color 0.2s ease;
+}
+
+.navbar-menu a:hover {
+	background: rgba(255, 255, 255, 0.15);
+}
+
+.navbar-menu a.active {
+	background: #ffbf32;
+	color: #482d1f;
+}
+
+.navbar-actions {
+	display: flex;
+	align-items: center;
+	gap: 18px;
+}
+
+.nav-icon {
+	position: relative;
+	border: none;
+	background: transparent;
+	color: #ffffff;
+	font-size: 22px;
+}
+
+.notification-badge {
+	position: absolute;
+	top: -9px;
+	right: -10px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 18px;
+	height: 18px;
+	border-radius: 50%;
+	background: #ffbf32;
+	color: #482d1f;
+	font-size: 10px;
+	font-weight: 800;
+}
+
+/* ========================================
+   CONTENIDO PRINCIPAL
+======================================== */
+
+.clients-main-container {
+	width: 96%;
+	max-width: 1800px;
+	margin: 25px auto 40px;
+}
+
+.clients-layout-grid {
+	display: grid;
+	grid-template-columns: minmax(330px, 0.78fr) minmax(0, 1.22fr);
+	gap: 34px;
+	align-items: start;
+}
+
+/* ========================================
+   COLUMNA IZQUIERDA
+======================================== */
+
+.left-hero-column {
+	min-width: 0;
+	padding-top: 5px;
+}
+
+.title-with-actions {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 12px;
+	margin-bottom: 38px;
+}
+
+.page-title {
+	color: var(--brown);
+	font-size: clamp(27px, 2.5vw, 43px);
+	font-weight: 800;
+	line-height: 1.2;
+	letter-spacing: -1.2px;
+}
+
+.top-action-icons {
+	display: flex;
+	gap: 10px;
+	flex-shrink: 0;
+}
+
+.icon-circle-btn {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 46px;
+	height: 46px;
+	border: 1px solid var(--gold);
+	border-radius: 50%;
+	background: var(--white);
+	color: var(--brown);
+	box-shadow: 0 5px 14px rgba(0, 0, 0, 0.08);
+}
+
+.icon-circle-btn:hover {
+	background: var(--cream);
+}
+
+.page-subtitle {
+	margin-bottom: 12px;
+	color: var(--brown);
+	font-size: clamp(20px, 1.8vw, 29px);
+	font-weight: 700;
+	line-height: 1.35;
+}
+
+.page-description {
+	max-width: 620px;
+	color: var(--muted);
+	font-size: 15px;
+	line-height: 1.65;
+}
+
+.hero-image-wrapper {
+	display: flex;
+	align-items: flex-end;
+	justify-content: center;
+	width: 100%;
+	margin-top: 35px;
+	overflow: hidden;
+}
+
+.hero-senor-img {
+	display: block;
+	width: 100%;
+	max-width: 650px;
+	height: auto;
+	object-fit: contain;
+	object-position: center bottom;
+}
+
+/* ========================================
+   COLUMNA DERECHA
+======================================== */
+
+.right-content-column {
+	display: flex;
+	flex-direction: column;
+	gap: 26px;
+	min-width: 0;
+}
+
+/* ========================================
+   BUSCADOR Y FILTROS
+======================================== */
+
+.search-filter-card {
+	padding: 21px 24px;
+	background: var(--cream);
+	border: 1px solid var(--gold);
+	border-radius: 17px;
+	box-shadow: 0 5px 15px rgba(0, 0, 0, 0.04);
+}
+
+.search-input-box {
+	position: relative;
+	display: flex;
+	align-items: center;
+	width: 100%;
+}
+
+.search-icon {
+	position: absolute;
+	left: 16px;
+	color: var(--muted);
+	font-size: 17px;
+	pointer-events: none;
+}
+
+.search-input-box input {
+	width: 100%;
+	min-width: 0;
+	height: 58px;
+	padding: 0 16px 0 45px;
+	border: 1px solid var(--gold);
+	border-radius: 12px;
+	outline: none;
+	background: #fffdf2;
+	color: var(--text);
+	font-size: 15px;
+}
+
+.search-input-box input:focus {
+	border-color: var(--brown);
+}
+
+.filter-pills-row {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 10px;
+	margin-top: 19px;
+}
+
+.filter-pill {
+	padding: 10px 20px;
+	border: 1px solid var(--gold);
+	border-radius: 30px;
+	background: var(--white);
+	color: var(--text);
+	font-size: 14px;
+	font-weight: 600;
+	transition: background 0.2s ease, color 0.2s ease;
+}
+
+.filter-pill:hover {
+	background: #fff0c7;
+}
+
+.filter-pill.active {
+	border-color: var(--brown);
+	background: var(--brown);
+	color: #ffffff;
+}
+
+/* ========================================
+   TABLA DE CLIENTES
+======================================== */
+
+.clients-table-card {
+	width: 100%;
+	overflow-x: auto;
+	border: 1px solid var(--gold);
+	border-radius: 17px;
+	background: var(--white);
+	box-shadow: 0 5px 15px rgba(0, 0, 0, 0.04);
+}
+
+.clients-table {
+	width: 100%;
+	border-collapse: collapse;
+	text-align: left;
+}
+
+.clients-table thead {
+	background: var(--cream);
+}
+
+.clients-table th {
+	padding: 18px 15px;
+	border-bottom: 1px solid var(--gold);
+	color: var(--brown);
+	font-size: 12px;
+	font-weight: 800;
+	text-transform: uppercase;
+	white-space: nowrap;
+}
+
+.clients-table td {
+	padding: 19px 15px;
+	border-bottom: 1px solid var(--line);
+	font-size: 14px;
+	vertical-align: middle;
+}
+
+.clients-table tbody tr:last-child td {
+	border-bottom: none;
+}
+
+.clients-table tbody tr:hover {
+	background: #fffdf7;
+}
+
+/* ========================================
+   INFORMACIÓN DEL CLIENTE
+======================================== */
+
+.client-profile-cell {
+	display: flex;
+	align-items: center;
+	gap: 12px;
+	min-width: 190px;
+}
+
+.avatar-circle {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-shrink: 0;
+	width: 46px;
+	height: 46px;
+	border-radius: 50%;
+	background: var(--brown);
+	color: #ffffff;
+	font-size: 14px;
+	font-weight: 800;
+}
+
+.client-name-box h4 {
+	margin-bottom: 3px;
+	color: var(--text);
+	font-size: 15px;
+	font-weight: 800;
+	white-space: nowrap;
+}
+
+.client-name-box p {
+	color: var(--muted);
+	font-size: 13px;
+}
+
+.purchases-text {
+	white-space: nowrap;
+}
+
+.debt-amount {
+	font-size: 15px;
+	font-weight: 800;
+	white-space: nowrap;
+}
+
+/* ========================================
+   ESTADOS
+======================================== */
+
+.status-badge {
+	display: inline-block;
+	padding: 7px 13px;
+	border-radius: 25px;
+	font-size: 12px;
+	font-weight: 800;
+	white-space: nowrap;
+}
+
+.status-badge.pending {
+	background: var(--yellow-bg);
+	color: var(--yellow-text);
+}
+
+.status-badge.ontime {
+	background: var(--green-bg);
+	color: var(--green-text);
+}
+
+.status-badge.overdue {
+	background: var(--red-bg);
+	color: var(--red-text);
+}
+
+/* ========================================
+   BOTÓN DE DETALLE
+======================================== */
+
+.action-link {
+	padding: 4px 0;
+	border: none;
+	background: transparent;
+	color: var(--brown);
+	font-size: 13px;
+	font-weight: 700;
+	white-space: nowrap;
+}
+
+.action-link:hover {
+	text-decoration: underline;
+}
+
+/* ========================================
+   ESTADO SIN RESULTADOS
+======================================== */
+
+.empty-state {
+	padding: 24px;
+	color: var(--muted);
+	text-align: center;
+	font-size: 14px;
+}
+
+/* ========================================
+   RECORDATORIO WHATSAPP
+======================================== */
+
+.whatsapp-reminder-card {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 20px;
+	padding: 22px 24px;
+	border: 1px solid var(--gold);
+	border-radius: 17px;
+	background: #fff9cd;
+}
+
+.reminder-text-info {
+	min-width: 0;
+}
+
+.reminder-header {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+	margin-bottom: 8px;
+}
+
+.whatsapp-icon {
+	color: #188d48;
+	font-size: 20px;
+}
+
+.reminder-header h3 {
+	color: var(--brown);
+	font-size: 17px;
+	font-weight: 800;
+}
+
+.reminder-text-info p {
+	color: var(--muted);
+	font-size: 14px;
+	line-height: 1.55;
+	overflow-wrap: anywhere;
+}
+
+.btn-send-whatsapp {
+	flex-shrink: 0;
+	padding: 13px 23px;
+	border: none;
+	border-radius: 10px;
+	background: var(--brown);
+	color: #ffffff;
+	font-size: 14px;
+	font-weight: 800;
+	transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.btn-send-whatsapp:hover {
+	background: #76523e;
+	transform: translateY(-2px);
+}
+
+.feedback {
+	color: var(--muted);
+	font-size: 13px;
+}
+
+/* ========================================
+   VENTANA DE DETALLES
+======================================== */
+
+.detail-dialog {
+	position: fixed;
+	inset: 0;
+	width: min(92%, 480px);
+	max-width: 480px;
+	margin: auto;
+	padding: 30px;
+	border: 1px solid var(--gold);
+	border-radius: 18px;
+	background: var(--white);
+	color: var(--text);
+	box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
+}
+
+.detail-dialog::backdrop {
+	background: rgba(30, 20, 15, 0.55);
+}
+
+.close-dialog {
+	float: right;
+	border: none;
+	background: transparent;
+	color: var(--brown);
+	font-size: 28px;
+	line-height: 1;
+}
+
+.dialog-eyebrow {
+	margin-bottom: 8px;
+	color: var(--muted);
+	font-size: 11px;
+	font-weight: 800;
+	letter-spacing: 1px;
+}
+
+.detail-dialog h2 {
+	margin-bottom: 5px;
+	color: var(--brown);
+	font-size: 24px;
+}
+
+.dialog-muted {
+	color: var(--muted);
+	font-size: 14px;
+}
+
+.detail-grid {
+	display: grid;
+	grid-template-columns: 1fr;
+	gap: 10px;
+	margin: 22px 0;
+}
+
+.detail-grid div {
+	display: flex;
+	justify-content: space-between;
+	gap: 15px;
+	padding: 13px;
+	border-radius: 10px;
+	background: var(--cream);
+}
+
+.detail-grid span {
+	color: var(--muted);
+	font-size: 13px;
+}
+
+.detail-grid strong {
+	color: var(--brown);
+	font-size: 14px;
+}
+
+/* ========================================
+   MODO OSCURO
+======================================== */
+
+body.dark-mode {
+	--white: #211d1b;
+	--cream: #302821;
+	--text: #f8f2e9;
+	--muted: #c6b7ac;
+	--brown: #f1d7a2;
+	--gold: #66513a;
+	--line: #4a3b2f;
+	--green-bg: #194b32;
+	--green-text: #b4f0c9;
+	--yellow-bg: #59471e;
+	--yellow-text: #ffe49a;
+	--red-bg: #572b30;
+	--red-text: #ffc0c6;
+}
+
+body.dark-mode .navbar {
+	background: #302821;
+	border: 1px solid #66513a;
+}
+
+body.dark-mode .search-input-box input {
+	background: #211d1b;
+	color: var(--text);
+}
+
+body.dark-mode .filter-pill {
+	background: #211d1b;
+	color: var(--text);
+}
+
+body.dark-mode .filter-pill.active {
+	background: #f1d7a2;
+	color: #211d1b;
+}
+
+body.dark-mode .clients-table-card {
+	background: var(--white);
+}
+
+body.dark-mode .clients-table tbody tr:hover {
+	background: #302821;
+}
+
+body.dark-mode .whatsapp-reminder-card {
+	background: #302b1d;
+}
+
+body.dark-mode .icon-circle-btn {
+	background: #302821;
+	color: var(--text);
+}
+
+body.dark-mode .detail-grid div {
+	background: #302821;
+}
+
+/* ========================================
+   RESPONSIVE
+======================================== */
+
+@media (max-width: 1200px) {
+	.navbar {
+		width: 95%;
+		padding: 12px 18px;
+		gap: 12px;
+	}
+
+	.navbar-menu a {
+		padding: 9px 10px;
+		font-size: 12px;
+	}
+
+	.clients-layout-grid {
+		grid-template-columns: minmax(280px, 0.75fr) minmax(0, 1.25fr);
+		gap: 22px;
+	}
+
+	.clients-table th,
+	.clients-table td {
+		padding: 14px 10px;
+	}
+}
+
+@media (max-width: 900px) {
+	.navbar {
+		flex-wrap: wrap;
+		justify-content: center;
+		border-radius: 25px;
+	}
+
+	.navbar-menu {
+		order: 3;
+		width: 100%;
+	}
+
+	.clients-layout-grid {
+		grid-template-columns: 1fr;
+	}
+
+	.left-hero-column {
+		max-width: 760px;
+	}
+
+	.hero-image-wrapper {
+		max-height: 450px;
+	}
+
+	.hero-senor-img {
+		max-width: 500px;
+	}
+
+	.right-content-column {
+		width: 100%;
+	}
+}
+
+@media (max-width: 600px) {
+	.site-header {
+		padding-top: 12px;
+	}
+
+	.navbar {
+		width: 94%;
+		padding: 14px 10px;
+		gap: 15px;
+	}
+
+	.navbar-logo {
+		height: 36px;
+	}
+
+	.navbar-menu {
+		justify-content: center;
+		gap: 3px;
+	}
+
+	.navbar-menu a {
+		padding: 8px;
+		font-size: 11px;
+	}
+
+	.navbar-actions {
+		gap: 14px;
+	}
+
+	.clients-main-container {
+		width: 94%;
+		margin-top: 22px;
+	}
+
+	.title-with-actions {
+		align-items: flex-start;
+		margin-bottom: 25px;
+	}
+
+	.page-title {
+		font-size: 29px;
+	}
+
+	.icon-circle-btn {
+		width: 38px;
+		height: 38px;
+	}
+
+	.page-subtitle {
+		font-size: 22px;
+	}
+
+	.page-description {
+		font-size: 14px;
+	}
+
+	.hero-image-wrapper {
+		margin-top: 22px;
+	}
+
+	.search-filter-card {
+		padding: 16px;
+	}
+
+	.search-input-box input {
+		height: 50px;
+		font-size: 13px;
+	}
+
+	.filter-pills-row {
+		gap: 7px;
+	}
+
+	.filter-pill {
+		padding: 9px 13px;
+		font-size: 12px;
+	}
+
+	.clients-table {
+		min-width: 760px;
+	}
+
+	.whatsapp-reminder-card {
+		align-items: flex-start;
+		flex-direction: column;
+		padding: 18px;
+	}
+
+	.btn-send-whatsapp {
+		align-self: flex-end;
+	}
+
+	.detail-dialog {
+		padding: 22px;
+	}
+}
