@@ -1,295 +1,241 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FIA'O - Inventario</title>
-    <link rel="stylesheet" href="asset/css/product.css">
-    <link rel="stylesheet"
-          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FIA'O - Products & Inventory</title>
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- CSS Stylesheet para Products -->
+  <link rel="stylesheet" href="asset/css/Products.css">
 </head>
 <body>
-      <!-- BARRA DE NAVEGACIÓN -->
-    <header class="navbar">
-        <div class="logo">FIA<span class="yellow-text">´O</span></div>
-        <nav class="nav-links">
-            <a href="login.html" class="active">Home</a>
-            <a href="credit.html">Credit</a>
-            <a href="products.html" class="active">Products</a>
-            <a href="clients.html">Clients</a>
-            <a href="reports.html">Reports</a>
-            <a href="contact.html">Contact</a>
-        </nav>
-    </header>
-</body>
-
-    <!-- Barra superior -->
-    <header class="topbar">
-        <a href="#" class="logo">FIA'O</a>
-
-        <div class="search-box">
-            <i class="fa-solid fa-magnifying-glass"></i>
-            <input type="search"
-                   placeholder="Search products, pantry, drinks...">
+ 
+  <!-- FIA'O NAVIGATION BAR -->
+  <header>
+    <nav class="navbar">
+ 
+      <!-- Logo -->
+      <div class="navbar-brand">
+        <a href="index.html" class="navbar-logo-link">
+          <img
+            src="asset/img/logof.png"
+            alt="FIA'O Logo"
+            class="navbar-logo"
+            >
+        </a>
+      </div>
+ 
+      <!-- Navigation Links -->
+      <ul class="navbar-menu">
+        <li><a href="index.html" class="nav-link">Home</a></li>
+        <li><a href="credit.html" class="nav-link">Credit</a></li>
+        <li><a href="products.html" class="nav-link active">Products</a></li>
+        <li><a href="clients.html" class="nav-link">Clients</a></li>
+        <li><a href="reports.html" class="nav-link">Reports</a></li>
+        <li><a href="contact.html" class="nav-link">Contact</a></li>
+      </ul>
+ 
+      <!-- Action Icons -->
+      <div class="navbar-actions">
+ 
+        <button
+          class="icon-btn"
+          id="notifications-btn"
+          title="Notifications"
+          type="button"
+        >
+          <i class="fa-regular fa-bell"></i>
+          <span class="notification-badge">2</span>
+        </button>
+ 
+        <button
+          class="icon-btn"
+          id="theme-toggle"
+          title="Toggle Dark/Light Mode"
+          type="button"
+        >
+          <i class="fa-regular fa-moon"></i>
+        </button>
+ 
+        <a
+          href="User.html"
+          class="user-avatar-btn"
+          title="User Profile"
+        >
+          <i class="fa-regular fa-circle-user"></i>
+        </a>
+ 
+      </div>
+    </nav>
+  </header>
+ 
+  <!-- Sub-header with Logo and Search Bar -->
+  <section class="sub-header-bar">
+    <div class="sub-header-container">
+      <div class="brand-sub">
+        <img src="asset/img/logof.png" alt="FIA'O Logo" class="sub-logo">
+      </div>
+      <div class="search-bar-wrapper">
+        <i class="fa-solid fa-magnifying-glass search-icon"></i>
+        <input type="text" id="search-input" placeholder="Search products, pantry, drinks...">
+      </div>
+    </div>
+  </section>
+ 
+  <!-- Main Container -->
+  <main class="products-main-container">
+ 
+    <!-- Tab Navigation Bar -->
+    <div class="tabs-nav">
+      <button class="tab-btn active" id="tab-inventory-btn" data-tab="inventory">Inventory</button>
+      <button class="tab-btn" id="tab-fiado-btn" data-tab="fiado">Register Fiado Sale</button>
+    </div>
+ 
+    <!-- TAB 1: INVENTORY CONTENT -->
+    <section id="inventory-tab" class="tab-content active">
+      <div class="section-title-wrapper">
+        <h1 class="section-title">Your inventory, always exact</h1>
+        <p class="section-subtitle">Showing core products and add option. Use search bar to look up items.</p>
+      </div>
+ 
+      <div class="products-grid" id="products-grid">
+        <!-- Products will be generated dynamically by JS -->
+      </div>
+    </section>
+ 
+    <!-- TAB 2: REGISTER FIADO SALE CONTENT -->
+    <section id="fiado-tab" class="tab-content">
+      <div class="section-title-wrapper">
+        <h1 class="section-title">Register Fiado Sale</h1>
+        <p class="section-subtitle">Assign credit sales to a client in less than a minute.</p>
+      </div>
+ 
+      <div class="fiado-form-card">
+        <form id="fiado-sale-form">
+          <div class="form-row-client">
+            <div class="form-group flex-1">
+              <label class="form-label">Client</label>
+              <select id="fiado-client" class="custom-select" required>
+                <option value="Ramón Batista">Ramón Batista</option>
+                <option value="Carlos Gómez">Carlos Gómez</option>
+                <option value="Ana Martínez">Ana Martínez</option>
+                <option value="Yolanda Pérez">Yolanda Pérez</option>
+              </select>
+            </div>
+            <button type="button" class="btn btn-dark-add" id="add-client-btn">+ New Client</button>
+          </div>
+ 
+          <div class="form-row">
+            <div class="form-group flex-2">
+              <label class="form-label">Product</label>
+              <select id="fiado-product" class="custom-select" required>
+                <!-- Generated by JS -->
+              </select>
+            </div>
+            <div class="form-group flex-1">
+              <label class="form-label">Quantity</label>
+              <input type="number" id="fiado-quantity" class="custom-input" value="1" min="1" required>
+            </div>
+          </div>
+ 
+          <div class="form-group">
+            <label class="form-label">Date</label>
+            <input type="date" id="fiado-date" class="custom-input" required>
+          </div>
+ 
+          <div class="total-box">
+            <span>TOTAL OF THE FIADO</span>
+            <span class="total-amount" id="fiado-total-display">B/. 0.00</span>
+          </div>
+ 
+          <button type="submit" class="btn btn-red-submit">Register fiado</button>
+        </form>
+      </div>
+ 
+      <!-- Recent Fiado Sales Section -->
+      <div class="recent-sales-card">
+        <h3 class="recent-sales-title">Recent fiado sales</h3>
+        <div id="recent-sales-list" class="recent-sales-list">
+          <div class="recent-sale-item">
+            <span><strong>Yolanda Pérez</strong> - White Bread (x2)</span>
+            <div class="sale-actions">
+              <span class="sale-price">B/. 3.00</span>
+              <button class="delete-sale-btn" title="Delete Sale"><i class="fa-solid fa-trash"></i></button>
+            </div>
+          </div>
         </div>
-
-        <div class="top-actions">
-            <button class="language">
-                <i class="fa-solid fa-globe"></i> ES
-            </button>
-            <button class="theme-button" aria-label="Cambiar tema">
-                <i class="fa-solid fa-moon"></i>
-            </button>
+      </div>
+    </section>
+ 
+  </main>
+ 
+  <!-- MODAL: ADD / EDIT PRODUCT -->
+  <div class="modal-overlay" id="product-modal">
+    <div class="modal-card">
+      <button class="close-modal-btn" id="close-modal">&times;</button>
+      <h2 class="modal-title" id="modal-title-text">Add New Product</h2>
+ 
+      <form id="product-form">
+        <div class="upload-photo-box" id="upload-box">
+          <i class="fa-solid fa-camera camera-icon"></i>
+          <span id="upload-label">Click to upload photo from files</span>
+          <input type="file" id="product-file-input" accept="image/*" class="file-input-hidden">
         </div>
-    </header>
-
-    <!-- Contenido principal -->
-    <main class="container">
-
-        <!-- Navegación -->
-        <nav class="tabs">
-            <button class="tab active">Inventory</button>
-            <button class="tab">Register Fiado Sale</button>
-        </nav>
-
-        <!-- Título -->
-        <section class="inventory-header">
-            <h1>Your inventory, always exact</h1>
-            <p>
-                Showing core products and add option.
-                Use search bar to look up items.
-            </p>
-        </section>
-
-        <!-- Productos -->
-        <section class="product-grid" id="productGrid">
-
-            <!-- Azúcar -->
-            <article class="product-card" data-name="sugar">
-                <div class="product-info">
-                    <div class="product-image">
-                        <img src="https://images.unsplash.com/photo-1581441363689-1f3c3c414635?auto=format&fit=crop&w=150&q=80"
-                             alt="Azúcar">
-                    </div>
-                    <div class="product-details">
-                        <span class="category">Pantry</span>
-                        <h3>Sugar</h3>
-                        <strong class="price">B/. 0.85</strong>
-                    </div>
-                </div>
-                <div class="stock">
-                    <span>Stock:</span>
-                    <strong>25 lb</strong>
-                </div>
-                <div class="card-actions">
-                    <button class="action-button" onclick="editProduct('Sugar')">
-                        <i class="fa-solid fa-pen"></i> Edit
-                    </button>
-                    <button class="action-button" onclick="deleteProduct(this)">
-                        <i class="fa-solid fa-trash"></i> Delete
-                    </button>
-                </div>
-            </article>
-
-            <!-- Arroz -->
-            <article class="product-card" data-name="rice">
-                <div class="product-info">
-                    <div class="product-image">
-                        <img src="https://images.unsplash.com/photo-1586201375761-83865001e31c?auto=format&fit=crop&w=150&q=80"
-                             alt="Arroz">
-                    </div>
-                    <div class="product-details">
-                        <span class="category">Pantry</span>
-                        <h3>Rice</h3>
-                        <strong class="price">B/. 0.95</strong>
-                    </div>
-                </div>
-                <div class="stock">
-                    <span>Stock:</span>
-                    <strong>38 lb</strong>
-                </div>
-                <div class="card-actions">
-                    <button class="action-button" onclick="editProduct('Rice')">
-                        <i class="fa-solid fa-pen"></i> Edit
-                    </button>
-                    <button class="action-button" onclick="deleteProduct(this)">
-                        <i class="fa-solid fa-trash"></i> Delete
-                    </button>
-                </div>
-            </article>
-
-            <!-- Pan blanco -->
-            <article class="product-card" data-name="white bread">
-                <div class="product-info">
-                    <div class="product-image">
-                        <img src="https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=150&q=80"
-                             alt="Pan blanco">
-                    </div>
-                    <div class="product-details">
-                        <span class="category">Bakery</span>
-                        <h3>White Bread</h3>
-                        <strong class="price">B/. 1.50</strong>
-                    </div>
-                </div>
-                <div class="stock">
-                    <span>Stock:</span>
-                    <strong>12 Unit</strong>
-                </div>
-                <div class="card-actions">
-                    <button class="action-button" onclick="editProduct('White Bread')">
-                        <i class="fa-solid fa-pen"></i> Edit
-                    </button>
-                    <button class="action-button" onclick="deleteProduct(this)">
-                        <i class="fa-solid fa-trash"></i> Delete
-                    </button>
-                </div>
-            </article>
-
-            <!-- Coca-Cola -->
-            <article class="product-card" data-name="coca cola">
-                <div class="product-info">
-                    <div class="product-image">
-                        <img src="https://images.unsplash.com/photo-1554866585-cd94860890b7?auto=format&fit=crop&w=150&q=80"
-                             alt="Coca-Cola">
-                    </div>
-                    <div class="product-details">
-                        <span class="category">Beverages</span>
-                        <h3>Coca Cola 2L</h3>
-                        <strong class="price">B/. 2.10</strong>
-                    </div>
-                </div>
-                <div class="stock">
-                    <span>Stock:</span>
-                    <strong>20 Bottle</strong>
-                </div>
-                <div class="card-actions">
-                    <button class="action-button" onclick="editProduct('Coca Cola 2L')">
-                        <i class="fa-solid fa-pen"></i> Edit
-                    </button>
-                    <button class="action-button" onclick="deleteProduct(this)">
-                        <i class="fa-solid fa-trash"></i> Delete
-                    </button>
-                </div>
-            </article>
-
-            <!-- Huevos -->
-            <article class="product-card" data-name="eggs">
-                <div class="product-info">
-                    <div class="product-image">
-                        <img src="https://images.unsplash.com/photo-1506976785307-8732e854ad03?auto=format&fit=crop&w=150&q=80"
-                             alt="Huevos">
-                    </div>
-                    <div class="product-details">
-                        <span class="category">Dairy</span>
-                        <h3>Eggs (Dozen)</h3>
-                        <strong class="price">B/. 3.20</strong>
-                    </div>
-                </div>
-                <div class="stock">
-                    <span>Stock:</span>
-                    <strong>15 Pack</strong>
-                </div>
-                <div class="card-actions">
-                    <button class="action-button" onclick="editProduct('Eggs (Dozen)')">
-                        <i class="fa-solid fa-pen"></i> Edit
-                    </button>
-                    <button class="action-button" onclick="deleteProduct(this)">
-                        <i class="fa-solid fa-trash"></i> Delete
-                    </button>
-                </div>
-            </article>
-
-            <!-- Agregar producto -->
-            <button class="add-product" onclick="addProduct()">
-                <i class="fa-solid fa-plus"></i>
-                <strong>Add New Product</strong>
-                <span>Create a new item</span>
-            </button>
-
-        </section>
-    </main>
-
-    <script>
-        // Buscar productos
-        const searchInput = document.querySelector(
-            '.search-box input'
-        );
-
-        searchInput.addEventListener('input', function () {
-            const search = this.value.toLowerCase();
-
-            document.querySelectorAll('.product-card').forEach(card => {
-                const name = card.dataset.name.toLowerCase();
-                card.style.display = name.includes(search) ? '' : 'none';
-            });
-        });
-
-        // Eliminar producto
-        function deleteProduct(button) {
-            const confirmDelete = confirm(
-                '¿Deseas eliminar este producto?'
-            );
-
-            if (confirmDelete) {
-                button.closest('.product-card').remove();
-            }
-        }
-
-        // Editar producto
-        function editProduct(name) {
-            alert('Editar producto: ' + name);
-        }
-
-        // Agregar producto
-        function addProduct() {
-            const name = prompt('Nombre del nuevo producto:');
-
-            if (name && name.trim()) {
-                const grid = document.getElementById('productGrid');
-                const card = document.createElement('article');
-
-                card.className = 'product-card';
-                card.dataset.name = name.trim().toLowerCase();
-
-                card.innerHTML = `
-                    <div class="product-info">
-                        <div class="product-image new-image">
-                            <i class="fa-solid fa-box"></i>
-                        </div>
-                        <div class="product-details">
-                            <span class="category">General</span>
-                            <h3></h3>
-                            <strong class="price">B/. 0.00</strong>
-                        </div>
-                    </div>
-                    <div class="stock">
-                        <span>Stock:</span>
-                        <strong>0 Unit</strong>
-                    </div>
-                    <div class="card-actions">
-                        <button class="action-button"
-                            onclick="editProduct(this.closest('.product-card').querySelector('h3').textContent)">
-                            <i class="fa-solid fa-pen"></i> Edit
-                        </button>
-                        <button class="action-button"
-                            onclick="deleteProduct(this)">
-                            <i class="fa-solid fa-trash"></i> Delete
-                        </button>
-                    </div>
-                `;
-
-                card.querySelector('h3').textContent = name.trim();
-
-                const addButton = grid.querySelector('.add-product');
-                grid.insertBefore(card, addButton);
-            }
-        }
-
-        // Cambiar entre tema claro y oscuro
-        document.querySelector('.theme-button').addEventListener('click', () => {
-            document.body.classList.toggle('dark-mode');
-        });
-    </script>
-
+ 
+        <div class="form-group">
+          <label class="form-label"><i class="fa-solid fa-link"></i> Or paste image link (URL)</label>
+          <input type="text" id="product-image-url" class="custom-input" placeholder="https://example.com/image.jpg">
+        </div>
+ 
+        <div class="form-group">
+          <label class="form-label">📝 Product Name *</label>
+          <input type="text" id="product-name" class="custom-input" placeholder="e.g. Rice (1 lb)" required>
+        </div>
+ 
+        <div class="form-row">
+          <div class="form-group flex-1">
+            <label class="form-label">🏷️ Category *</label>
+            <select id="product-category" class="custom-select" required>
+              <option value="Pantry">Pantry</option>
+              <option value="Bakery">Bakery</option>
+              <option value="Beverages">Beverages</option>
+              <option value="Dairy">Dairy</option>
+              <option value="Snacks">Snacks</option>
+            </select>
+          </div>
+          <div class="form-group flex-1">
+            <label class="form-label">📦 Unit *</label>
+            <select id="product-unit" class="custom-select" required>
+              <option value="Pound (lb)">Pound (lb)</option>
+              <option value="Unit">Unit</option>
+              <option value="Bottle">Bottle</option>
+              <option value="Pack">Pack</option>
+            </select>
+          </div>
+        </div>
+ 
+        <div class="form-row">
+          <div class="form-group flex-1">
+            <label class="form-label">💵 Selling Price (B/.) *</label>
+            <input type="number" step="0.01" id="product-price" class="custom-input" placeholder="0.95" required>
+          </div>
+          <div class="form-group flex-1">
+            <label class="form-label">🧮 Stock (Quantity) *</label>
+            <input type="number" id="product-stock" class="custom-input" placeholder="50" required>
+          </div>
+        </div>
+ 
+        <div class="modal-buttons">
+          <button type="button" class="btn btn-cancel" id="cancel-modal-btn">Cancel</button>
+          <button type="submit" class="btn btn-save">Save Product</button>
+        </div>
+      </form>
+    </div>
+  </div>
+ 
+  <!-- Script File para Products -->
+  <script src="asset/js/products.js"></script>
 </body>
 </html>
+ 

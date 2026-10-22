@@ -1,0 +1,345 @@
+/* Import Google Fonts fallback for DM Sans */
+@import url(https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap%27);
+ 
+/* Font Declarations */
+@font-face {
+  font-family: 'Gotham';
+  src: local('Gotham'), local('Gotham-Bold'), url('https://fonts.cdnfonts.com/s/14955/GothamBold.woff') format('woff');
+  font-weight: bold;
+}
+ 
+@font-face {
+  font-family: 'Garet';
+  src: local('Garet'), url('https://fonts.cdnfonts.com/s/72224/Garet-Book.woff') format('woff');
+  font-weight: normal;
+}
+ 
+:root {
+  --color-red: #B91C1C;
+  --color-yellow: #FFBF32;
+  --color-cream: #FEF3C7;
+  --color-brown: #482D1F;
+ 
+  --font-title: 'Gotham', sans-serif;
+  --font-subtitle: 'DM Sans', sans-serif;
+  --font-body: 'Garet', sans-serif;
+}
+ 
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+ 
+body.auth-page {
+  background-color: var(--color-cream);
+  color: var(--color-brown);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  padding: 40px 20px;
+  font-family: var(--font-body);
+}
+ 
+/* Back Button */
+.back-btn {
+  position: absolute;
+  top: 25px;
+  left: 25px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+  color: var(--color-brown);
+  font-family: var(--font-subtitle);
+  font-weight: 700;
+  font-size: 16px;
+  background-color: #FFFFFF;
+  padding: 10px 18px;
+  border-radius: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+  transition: transform 0.2s ease, background-color 0.2s ease;
+  z-index: 10;
+}
+ 
+.back-btn:hover {
+  transform: translateX(-3px);
+  background-color: #FFFDF5;
+}
+ 
+/* Auth Main Layout Container */
+.auth-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1200px;
+  width: 100%;
+  gap: 50px;
+}
+ 
+/* Left Column - Information */
+.auth-info {
+  flex: 1;
+  max-width: 520px;
+}
+ 
+.auth-logo-wrapper {
+  margin-bottom: 25px;
+}
+ 
+.auth-logo {
+  height: 48px;
+  width: auto;
+  object-fit: contain;
+}
+ 
+.auth-title {
+  font-family: var(--font-title);
+  font-size: 44px;
+  line-height: 1.15;
+  color: var(--color-brown);
+  margin-bottom: 12px;
+}
+ 
+.highlight-red {
+  color: var(--color-red);
+}
+ 
+.auth-subtitle {
+  font-family: var(--font-body);
+  font-size: 16px;
+  color: #6B7280;
+  margin-bottom: 35px;
+}
+ 
+/* Features List */
+.feature-list {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+ 
+.feature-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+}
+ 
+.feature-icon {
+  background-color: #FFFFFF;
+  color: var(--color-red);
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  flex-shrink: 0;
+}
+ 
+.feature-text h3 {
+  font-family: var(--font-subtitle);
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--color-brown);
+  margin-bottom: 4px;
+}
+ 
+.feature-text p {
+  font-family: var(--font-body);
+  font-size: 14px;
+  color: #6B7280;
+  line-height: 1.4;
+}
+ 
+/* Right Column - Card Form */
+.auth-card-wrapper {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+ 
+.auth-card {
+  background-color: #FFFFFF;
+  padding: 40px;
+  border-radius: 24px;
+  width: 100%;
+  max-width: 420px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+  text-align: center;
+}
+ 
+.form-title {
+  font-family: var(--font-title);
+  font-size: 32px;
+  color: var(--color-brown);
+  margin-bottom: 6px;
+}
+ 
+.form-subtitle {
+  font-family: var(--font-body);
+  font-size: 14px;
+  color: #6B7280;
+  margin-bottom: 28px;
+}
+ 
+/* Inputs & Form Fields */
+.form-group {
+  text-align: left;
+  margin-bottom: 18px;
+}
+ 
+.form-group label {
+  display: block;
+  font-family: var(--font-subtitle);
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--color-brown);
+  margin-bottom: 6px;
+}
+ 
+.input-icon-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+ 
+.input-icon {
+  position: absolute;
+  left: 14px;
+  color: var(--color-red);
+  font-size: 16px;
+}
+ 
+.input-icon-wrapper input {
+  width: 100%;
+  padding: 12px 14px 12px 42px;
+  border: 1px solid #E5E7EB;
+  border-radius: 10px;
+  font-family: var(--font-body);
+  font-size: 14px;
+  outline: none;
+  transition: border-color 0.2s ease;
+}
+ 
+.input-icon-wrapper input:focus {
+  border-color: var(--color-red);
+}
+ 
+.forgot-password-wrapper {
+  text-align: right;
+  margin-top: 6px;
+}
+ 
+.forgot-password-link {
+  font-family: var(--font-body);
+  font-size: 12px;
+  color: var(--color-red);
+  text-decoration: none;
+}
+ 
+.forgot-password-link:hover {
+  text-decoration: underline;
+}
+ 
+/* Submit Button */
+.btn-red-full {
+  width: 100%;
+  background-color: var(--color-red);
+  color: #FFFFFF;
+  font-family: var(--font-subtitle);
+  font-weight: 700;
+  font-size: 16px;
+  padding: 14px;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+ 
+.btn-red-full:hover {
+  background-color: #991B1B;
+  transform: translateY(-1px);
+}
+ 
+/* Fake reCAPTCHA Box */
+.recaptcha-box {
+  background-color: #F9FAFB;
+  border: 1px solid #E5E7EB;
+  border-radius: 8px;
+  padding: 12px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 24px;
+}
+ 
+.recaptcha-checkbox-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+ 
+.recaptcha-checkbox-wrapper input[type="checkbox"] {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+}
+ 
+.recaptcha-checkbox-wrapper label {
+  font-family: var(--font-body);
+  font-size: 13px;
+  color: #374151;
+  cursor: pointer;
+}
+ 
+.recaptcha-brand {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 9px;
+  color: #6B7280;
+}
+ 
+.recaptcha-logo {
+  font-size: 18px;
+  color: #2563EB;
+}
+ 
+/* Bottom Text Switch */
+.switch-auth-text {
+  font-family: var(--font-body);
+  font-size: 14px;
+  color: #6B7280;
+  line-height: 1.5;
+}
+ 
+.auth-link {
+  color: var(--color-red);
+  font-family: var(--font-subtitle);
+  font-weight: 700;
+  text-decoration: underline;
+}
+ 
+/* Responsive */
+@media (max-width: 900px) {
+  .auth-container {
+    flex-direction: column;
+    text-align: center;
+  }
+ 
+  .auth-info {
+    max-width: 100%;
+  }
+ 
+  .feature-item {
+    text-align: left;
+  }
+}
+ 

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FIA'O - Sign Up</title>
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- CSS Stylesheet para Sign Up -->
+  <link rel="stylesheet" href="asset/css/Signup.css">
+</head>
+<body class="auth-page">
+ 
+  <!-- Back to Home Button -->
+  <a href="index.html" class="back-btn" title="Back to Home">
+    <i class="fa-solid fa-arrow-left"></i> Back
+  </a>
+ 
+  <div class="auth-container">
+    <!-- Left Side Information Section -->
+    <div class="auth-info">
+      <div class="auth-logo-wrapper">
+        <img src="asset/img/logof.png" alt="FIA'O Logo" class="auth-logo">
+      </div>
+ 
+      <h1 class="auth-title">
+        Sign up for <br>
+        <span class="highlight-red">free</span>
+      </h1>
+      <p class="auth-subtitle">
+        Create your account on FIA'O and start managing your credit sales easily, securely, and in an organized way.
+      </p>
+ 
+      <div class="feature-list">
+        <div class="feature-item">
+          <div class="feature-icon">
+            <i class="fa-regular fa-user"></i>
+          </div>
+          <div class="feature-text">
+            <h3>Fast & Easy</h3>
+            <p>Create your account in just a few minutes and start using the platform.</p>
+          </div>
+        </div>
+ 
+        <div class="feature-item">
+          <div class="feature-icon">
+            <i class="fa-solid fa-shield-halved"></i>
+          </div>
+          <div class="feature-text">
+            <h3>Secure</h3>
+            <p>We protect your business and customer information.</p>
+          </div>
+        </div>
+ 
+        <div class="feature-item">
+          <div class="feature-icon">
+            <i class="fa-solid fa-cloud"></i>
+          </div>
+          <div class="feature-text">
+            <h3>Cloud-Based</h3>
+            <p>Access your information anytime, anywhere, from any device.</p>
+          </div>
+        </div>
+ 
+        <div class="feature-item">
+          <div class="feature-icon">
+            <i class="fa-solid fa-chart-line"></i>
+          </div>
+          <div class="feature-text">
+            <h3>Greater Control</h3>
+            <p>Keep track of your debits and business growth seamlessly.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+ 
+    <!-- Right Side Sign Up Form -->
+    <div class="auth-card-wrapper">
+      <div class="auth-card">
+        <h2 class="form-title">Create your account</h2>
+        <p class="form-subtitle highlight-red-sub">Complete the form to get started</p>
+ 
+        <form id="signup-form">
+          <div class="form-group">
+            <label for="fullname">Full name *</label>
+            <input type="text" id="fullname" class="input-plain" placeholder="Add your name" required>
+          </div>
+ 
+          <div class="form-group">
+            <label for="email">Email Address *</label>
+            <input type="email" id="email" class="input-plain" placeholder="Add your email" required>
+          </div>
+ 
+          <div class="form-group">
+            <label for="phone">Phone Number *</label>
+            <input type="tel" id="phone" class="input-plain" placeholder="Add your number" required>
+          </div>
+ 
+          <div class="form-group">
+            <label for="business">Business Name *</label>
+            <input type="text" id="business" class="input-plain" placeholder="Ejem: Tienda Doña Carmen" required>
+          </div>
+ 
+          <div class="form-row">
+            <div class="form-group flex-1">
+              <label for="password">Password *</label>
+              <input type="password" id="password" class="input-plain" placeholder="Add your password" required>
+            </div>
+            <div class="form-group flex-1">
+              <label for="confirm-password">Confirm Password *</label>
+              <input type="password" id="confirm-password" class="input-plain" placeholder="Confirm" required>
+            </div>
+          </div>
+ 
+          <button type="submit" class="btn btn-yellow-full">Create My Account</button>
+ 
+          <!-- Bottom Switch Link to Login -->
+          <p class="switch-auth-text margin-top-15">
+            Already have an account? <a href="login.html" class="auth-link">Log In</a>
+          </p>
+        </form>
+      </div>
+    </div>
+  </div>
+ 
+  <!-- Script File para Sign Up -->
+  <script src="asset/js/Signup.js"></script>
+</body>
+</html>
+ 
