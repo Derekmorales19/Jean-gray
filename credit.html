@@ -1,293 +1,257 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Debts & Payments</title>
-  <link rel="stylesheet" href="asset/css/credit.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FIA'O - Debts & Payments</title>
+
+    <!-- CSS: la ruta debe coincidir con la ubicación real del archivo -->
+    <link rel="stylesheet" href="./asset/css/credit.css">
+
+    <!-- Fuente -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
+
 <body>
-     <!-- BARRA DE NAVEGACIÓN -->
+
+    <!-- NAVEGACIÓN PRINCIPAL -->
     <header class="navbar">
         <div class="logo">FIA<span class="yellow-text">´O</span></div>
+
         <nav class="nav-links">
-            <a href="login.html" class="active">Home</a>
+            <a href="login.html">Home</a>
             <a href="credit.html" class="active">Credit</a>
-            <a href="products.html" class="active">Products</a>
-            <a href="clients.html" class="active">Clients</a>
-            <a href="reports.html" class="active">Reports</a>
-            <a href="contact.html" class="active">Contact</a>
+            <a href="product.html">Products</a>
+            <a href="clients.html">Clients</a>
+            <a href="reports.html">Reports</a>
+            <a href="contact.html">Contact</a>
         </nav>
     </header>
 
-  <header class="topbar">
-    <div class="top-actions">
-      <button class="top-button" aria-label="Notifications">♟ <span class="notification-count">3</span></button>
-      <button class="top-button" id="languageButton">🌐 ES</button>
-      <button class="top-button" id="themeButton" aria-label="Toggle theme">☾</button>
-    </div>
-  </header>
+    <!-- BARRA SUPERIOR -->
+    <header class="topbar">
+        <div class="top-actions">
+            <button class="top-button" type="button" aria-label="Notifications">
+                ♟ <span class="notification-count">3</span>
+            </button>
 
-  <main class="dashboard">
-    <section class="page-heading">
-      <h1>Debts <span>&amp;</span> Payments</h1>
-      <p>Manage customer debts, register payments, and track balances easily.</p>
-    </section>
+            <button class="top-button" id="languageButton" type="button">
+                🌐 ES
+            </button>
 
-    <div class="dashboard-grid">
-      <section class="column left-column">
-        <article class="card customer-picker">
-          <label for="customerSelect">♟ &nbsp;Select a Customer</label>
-          <select id="customerSelect">
-            <option value="ramon">Ramón Batista</option>
-            <option value="carlos">Carlos Gómez</option>
-            <option value="ana">Ana Martínez</option>
-          </select>
-        </article>
+            <button class="top-button" id="themeButton" type="button" aria-label="Toggle theme">
+                ☾
+            </button>
+        </div>
+    </header>
 
-        <article class="card customer-card">
-          <h2><span class="person-icon">●</span> <span id="customerName">Ramón Batista</span></h2>
-          <div class="balance-grid">
-            <div class="balance-box">
-              <small>Current Debt</small>
-              <strong id="currentDebt">B/. 35.00</strong>
-            </div>
-            <div class="balance-box">
-              <small>Credit Limit</small>
-              <strong class="dark" id="creditLimit">B/. 100.00</strong>
-            </div>
-          </div>
-          <div class="progress-track"><div class="progress-fill" id="progressFill"></div></div>
-          <div class="progress-labels">
-            <span id="usageLabel">35% used</span>
-            <span>Limit: <b id="limitLabel">B/. 100.00</b></span>
-          </div>
-        </article>
+    <!-- CONTENIDO PRINCIPAL -->
+    <main class="dashboard">
 
-        <article class="card blocking-card">
-          <div class="blocking-title">
-            <h2>🛡 Automatic Blocking</h2>
-            <button class="toggle active" id="blockingToggle" aria-label="Toggle automatic blocking"><span></span></button>
-          </div>
-          <p>If a customer exceeds the debt limit, system prevents new credits.</p>
-          <p class="toggle-status" id="toggleStatus">Automatic blocking is enabled.</p>
-        </article>
-      </section>
+        <section class="page-heading">
+            <h1>Debts <span>&amp;</span> Payments</h1>
+            <p>Manage customer debts, register payments, and track balances easily.</p>
+        </section>
 
-      <section class="column middle-column">
-        <article class="card history-card">
-          <h2>Debt History</h2>
-          <p class="muted">Track all purchases and payments.</p>
+        <div class="dashboard-grid">
 
-          <div class="history-list" id="historyList">
-            <div class="history-item">
-              <div class="date-badge"><b>14</b><span>JUL</span></div>
-              <div class="round-icon">🛒</div>
-              <div class="history-description"><b>Milk (2)</b><small>Fiado</small></div>
-              <strong class="amount">B/. 8.00</strong>
-              <span class="status pending">Pending</span>
-            </div>
+            <!-- COLUMNA IZQUIERDA -->
+            <section class="column left-column">
 
-            <div class="history-item">
-              <div class="date-badge"><b>09</b><span>JUL</span></div>
-              <div class="round-icon">🛒</div>
-              <div class="history-description"><b>Detergent</b><small>Fiado</small></div>
-              <strong class="amount">B/. 4.50</strong>
-              <span class="status pending">Pending</span>
-            </div>
+                <article class="card customer-picker">
+                    <label for="customerSelect">♟ &nbsp;Select a Customer</label>
 
-            <div class="history-item">
-              <div class="date-badge"><b>05</b><span>JUL</span></div>
-              <div class="round-icon">💵</div>
-              <div class="history-description"><b>Payment Received</b><small>Abono</small></div>
-              <strong class="amount paid-amount">−B/. 20.00</strong>
-              <span class="status paid">Paid</span>
-            </div>
+                    <select id="customerSelect">
+                        <option value="ramon">Ramón Batista</option>
+                        <option value="carlos">Carlos Gómez</option>
+                        <option value="ana">Ana Martínez</option>
+                    </select>
+                </article>
 
-            <div class="history-item">
-              <div class="date-badge"><b>01</b><span>JUL</span></div>
-              <div class="round-icon">🛒</div>
-              <div class="history-description"><b>Groceries</b><small>Fiado</small></div>
-              <strong class="amount">B/. 12.00</strong>
-              <span class="status pending">Pending</span>
-            </div>
-          </div>
+                <article class="card customer-card">
+                    <h2>
+                        <span class="person-icon">●</span>
+                        <span id="customerName">Ramón Batista</span>
+                    </h2>
 
-          <button class="text-link" id="historyButton">View Full History →</button>
-        </article>
+                    <div class="balance-grid">
+                        <div class="balance-box">
+                            <small>Current Debt</small>
+                            <strong id="currentDebt">B/. 35.00</strong>
+                        </div>
 
-        <article class="card payment-card">
-          <h2>Register Payment</h2>
-          <p class="muted">Record payments made by the customer.</p>
+                        <div class="balance-box">
+                            <small>Credit Limit</small>
+                            <strong class="dark" id="creditLimit">B/. 100.00</strong>
+                        </div>
+                    </div>
 
-          <form id="paymentForm">
-            <label for="paymentAmount">Payment Amount</label>
-            <div class="amount-input">
-              <span>B/.</span>
-              <input id="paymentAmount" type="number" min="0.01" step="0.01" placeholder="0.00" required>
-            </div>
+                    <div class="progress-track">
+                        <div class="progress-fill" id="progressFill"></div>
+                    </div>
 
-            <fieldset>
-              <legend>Payment Type</legend>
-              <label class="radio-label">
-                <input type="radio" name="paymentType" value="partial" checked>
-                Partial Payment
-              </label>
-              <label class="radio-label">
-                <input type="radio" name="paymentType" value="full">
-                Full Payment
-              </label>
-            </fieldset>
+                    <div class="progress-labels">
+                        <span id="usageLabel">35% used</span>
+                        <span>Limit: <b id="limitLabel">B/. 100.00</b></span>
+                    </div>
+                </article>
 
-            <div class="payment-actions">
-              <button class="primary-button" type="submit">Register Payment</button>
-              <button class="secondary-button" type="button" id="markPaidButton">Mark as Paid</button>
-            </div>
-            <p class="form-message" id="formMessage" role="status"></p>
-          </form>
-        </article>
-      </section>
+                <article class="card blocking-card">
+                    <div class="blocking-title">
+                        <h2>🛡 Automatic Blocking</h2>
 
-      <section class="column right-column">
-        <article class="card activity-card">
-          <h2>Recent Activity</h2>
+                        <button class="toggle active" id="blockingToggle" type="button"
+                            aria-label="Toggle automatic blocking" aria-pressed="true">
+                            <span></span>
+                        </button>
+                    </div>
 
-          <div class="activity-item">
-            <span class="activity-icon">▣</span>
-            <div><b>Ramón Batista</b><small>Paid B/. 15.00</small></div>
-            <span class="activity-time">Today <i class="dot green"></i></span>
-          </div>
+                    <p>If a customer exceeds the debt limit, the system prevents new credits.</p>
+                    <p class="toggle-status" id="toggleStatus">Automatic blocking is enabled.</p>
+                </article>
 
-          <div class="activity-item">
-            <span class="activity-icon">🛒</span>
-            <div><b>Carlos Gómez</b><small>New debt B/. 12.50</small></div>
-            <span class="activity-time">Yesterday <i class="dot orange"></i></span>
-          </div>
+            </section>
 
-          <div class="activity-item">
-            <span class="activity-icon">💵</span>
-            <div><b>Ana Martínez</b><small>Payment received: B/. 20.00</small></div>
-            <span class="activity-time">Yesterday <i class="dot green"></i></span>
-          </div>
+            <!-- COLUMNA CENTRAL -->
+            <section class="column middle-column">
 
-          <button class="text-link" id="activityButton">View all activity →</button>
-          <p class="activity-message" id="activityMessage"></p>
-        </article>
+                <article class="card history-card">
+                    <h2>Debt History</h2>
+                    <p class="muted">Track all purchases and payments.</p>
 
-        <article class="card overview-card">
-          <h2>Debt Overview</h2>
-          <div class="overview-grid">
-            <div><small>Outstanding Debt</small><strong>B/. 480.00</strong></div>
-            <div><small>Payments Today</small><strong>B/. 150.00</strong></div>
-            <div><small>Customers with Debt</small><strong>18</strong></div>
-            <div><small>Overdue</small><strong>4</strong></div>
-          </div>
-        </article>
-      </section>
-    </div>
-  </main>
+                    <div class="history-list" id="historyList">
+                        <div class="history-item">
+                            <div class="date-badge"><b>14</b><span>JUL</span></div>
+                            <div class="round-icon">🛒</div>
+                            <div class="history-description"><b>Milk (2)</b><small>Fiado</small></div>
+                            <strong class="amount">B/. 8.00</strong>
+                            <span class="status pending">Pending</span>
+                        </div>
 
-  <script>
-    const customers = {
-      ramon: { name: "Ramón Batista", debt: 35, limit: 100 },
-      carlos: { name: "Carlos Gómez", debt: 12.5, limit: 80 },
-      ana: { name: "Ana Martínez", debt: 20, limit: 120 }
-    };
+                        <div class="history-item">
+                            <div class="date-badge"><b>09</b><span>JUL</span></div>
+                            <div class="round-icon">🛒</div>
+                            <div class="history-description"><b>Detergent</b><small>Fiado</small></div>
+                            <strong class="amount">B/. 4.50</strong>
+                            <span class="status pending">Pending</span>
+                        </div>
 
-    const money = value => "B/. " + value.toFixed(2);
-    const customerSelect = document.getElementById("customerSelect");
+                        <div class="history-item">
+                            <div class="date-badge"><b>05</b><span>JUL</span></div>
+                            <div class="round-icon">💵</div>
+                            <div class="history-description"><b>Payment Received</b><small>Abono</small></div>
+                            <strong class="amount paid-amount">−B/. 20.00</strong>
+                            <span class="status paid">Paid</span>
+                        </div>
 
-    function updateCustomer() {
-      const customer = customers[customerSelect.value];
+                        <div class="history-item">
+                            <div class="date-badge"><b>01</b><span>JUL</span></div>
+                            <div class="round-icon">🛒</div>
+                            <div class="history-description"><b>Groceries</b><small>Fiado</small></div>
+                            <strong class="amount">B/. 12.00</strong>
+                            <span class="status pending">Pending</span>
+                        </div>
+                    </div>
 
-      document.getElementById("customerName").textContent = customer.name;
-      document.getElementById("currentDebt").textContent = money(customer.debt);
-      document.getElementById("creditLimit").textContent = money(customer.limit);
-      document.getElementById("limitLabel").textContent = money(customer.limit);
+                    <button class="text-link" id="historyButton" type="button">
+                        View Full History →
+                    </button>
+                </article>
 
-      const percent = Math.min(100, Math.round(customer.debt / customer.limit * 100));
+                <article class="card payment-card">
+                    <h2>Register Payment</h2>
+                    <p class="muted">Record payments made by the customer.</p>
 
-      document.getElementById("progressFill").style.width = percent + "%";
-      document.getElementById("usageLabel").textContent = percent + "% used";
-    }
+                    <form id="paymentForm">
+                        <label for="paymentAmount">Payment Amount</label>
 
-    customerSelect.addEventListener("change", updateCustomer);
+                        <div class="amount-input">
+                            <span>B/.</span>
+                            <input id="paymentAmount" type="number" min="0.01"
+                                step="0.01" placeholder="0.00">
+                        </div>
 
-    const toggle = document.getElementById("blockingToggle");
+                        <fieldset>
+                            <legend>Payment Type</legend>
 
-    toggle.addEventListener("click", () => {
-      toggle.classList.toggle("active");
+                            <label class="radio-label">
+                                <input type="radio" name="paymentType" value="partial" checked>
+                                Partial Payment
+                            </label>
 
-      const enabled = toggle.classList.contains("active");
+                            <label class="radio-label">
+                                <input type="radio" name="paymentType" value="full">
+                                Full Payment
+                            </label>
+                        </fieldset>
 
-      document.getElementById("toggleStatus").textContent = enabled
-        ? "Automatic blocking is enabled."
-        : "Automatic blocking is disabled.";
-    });
+                        <div class="payment-actions">
+                            <button class="primary-button" type="submit">
+                                Register Payment
+                            </button>
 
-    document.getElementById("paymentForm").addEventListener("submit", event => {
-      event.preventDefault();
+                            <button class="secondary-button" type="button" id="markPaidButton">
+                                Mark as Paid
+                            </button>
+                        </div>
 
-      const amountInput = document.getElementById("paymentAmount");
-      const amount = Number(amountInput.value);
-      const customer = customers[customerSelect.value];
-      const message = document.getElementById("formMessage");
+                        <p class="form-message" id="formMessage" role="status"></p>
+                    </form>
+                </article>
 
-      if (!Number.isFinite(amount) || amount <= 0) {
-        message.textContent = "Enter a valid payment amount.";
-        return;
-      }
+            </section>
 
-      customer.debt = Math.max(0, customer.debt - amount);
-      updateCustomer();
+            <!-- COLUMNA DERECHA -->
+            <section class="column right-column">
 
-      message.textContent = "Payment of " + money(amount) + " registered for " + customer.name + ".";
-      amountInput.value = "";
-    });
+                <article class="card activity-card">
+                    <h2>Recent Activity</h2>
 
-    document.getElementById("markPaidButton").addEventListener("click", () => {
-      const customer = customers[customerSelect.value];
-      const previousDebt = customer.debt;
+                    <div class="activity-item">
+                        <span class="activity-icon">▣</span>
+                        <div><b>Ramón Batista</b><small>Paid B/. 15.00</small></div>
+                        <span class="activity-time">Today <i class="dot green"></i></span>
+                    </div>
 
-      customer.debt = 0;
-      updateCustomer();
+                    <div class="activity-item">
+                        <span class="activity-icon">🛒</span>
+                        <div><b>Carlos Gómez</b><small>New debt B/. 12.50</small></div>
+                        <span class="activity-time">Yesterday <i class="dot orange"></i></span>
+                    </div>
 
-      document.getElementById("formMessage").textContent =
-        previousDebt > 0
-          ? customer.name + "'s balance was marked as paid."
-          : "This customer has no outstanding debt.";
-    });
+                    <div class="activity-item">
+                        <span class="activity-icon">💵</span>
+                        <div><b>Ana Martínez</b><small>Payment received: B/. 20.00</small></div>
+                        <span class="activity-time">Yesterday <i class="dot green"></i></span>
+                    </div>
 
-    document.getElementById("historyButton").addEventListener("click", () => {
-      const list = document.getElementById("historyList");
+                    <button class="text-link" id="activityButton" type="button">
+                        View all activity →
+                    </button>
 
-      list.classList.toggle("expanded");
+                    <p class="activity-message" id="activityMessage"></p>
+                </article>
 
-      document.getElementById("historyButton").textContent =
-        list.classList.contains("expanded")
-          ? "Show Less ↑"
-          : "View Full History →";
-    });
+                <article class="card overview-card">
+                    <h2>Debt Overview</h2>
 
-    document.getElementById("activityButton").addEventListener("click", () => {
-      document.getElementById("activityMessage").textContent =
-        "Showing the latest customer transactions.";
-    });
+                    <div class="overview-grid">
+                        <div><small>Outstanding Debt</small><strong>B/. 480.00</strong></div>
+                        <div><small>Payments Today</small><strong>B/. 150.00</strong></div>
+                        <div><small>Customers with Debt</small><strong>18</strong></div>
+                        <div><small>Overdue</small><strong>4</strong></div>
+                    </div>
+                </article>
 
-    document.getElementById("languageButton").addEventListener("click", () => {
-      const button = document.getElementById("languageButton");
+            </section>
 
-      button.textContent = button.textContent.includes("ES")
-        ? "🌐 EN"
-        : "🌐 ES";
-    });
+        </div>
+    </main>
 
-    document.getElementById("themeButton").addEventListener("click", () => {
-      document.body.classList.toggle("dark-mode");
-
-      document.getElementById("themeButton").textContent =
-        document.body.classList.contains("dark-mode") ? "☀" : "☾";
-    });
-  </script>
+    <!-- JavaScript externo: no agregues otro script dentro del HTML -->
+    <script src="./asset/js/credit.js"></script>
 </body>
 </html>

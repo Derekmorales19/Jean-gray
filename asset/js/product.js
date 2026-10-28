@@ -8,7 +8,7 @@ let products = [
     price: 0.85,
     stock: 25,
     unitAbbr: "lb",
-    image: "./asset/img/Azúcar.png"
+    image: "asset/img/Azúcar.png"
   },
   {
     id: 2,
@@ -18,7 +18,7 @@ let products = [
     price: 0.95,
     stock: 38,
     unitAbbr: "lb",
-    image: "./asset/img/Arroz.png"
+    image: "asset/img/azucar.png"
   },
   {
     id: 3,
@@ -28,7 +28,7 @@ let products = [
     price: 1.50,
     stock: 12,
     unitAbbr: "Unit",
-    image: "./asset/img/Pan.png"
+    image: "asset/img/pan.png"
   },
   {
     id: 4,
@@ -38,7 +38,7 @@ let products = [
     price: 2.10,
     stock: 20,
     unitAbbr: "Bottle",
-    image: "./asset/img/Cocacola.png"
+    image: "asset/img/coca cola.png"
   },
   {
     id: 5,
@@ -48,7 +48,7 @@ let products = [
     price: 3.20,
     stock: 15,
     unitAbbr: "Pack",
-    image: "./asset/img/Huevos.png"
+    image: "asset/img/huevos.png"
   }
 ];
  
